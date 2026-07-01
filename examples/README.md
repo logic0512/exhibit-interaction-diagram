@@ -41,5 +41,8 @@ vhs examples/showcase/demo.tape
 - `../assets/examples/06-tangible-operation-table.png`
 - `../assets/examples/07-mechanical-response.png`
 - `../assets/examples/08-multi-person-collaboration.png`
+- `../assets/examples/09-specimen-reconstruction.png`
+- `../assets/examples/10-globe-surface-arc-projection.png`
+- `../assets/examples/11-film-embedded-rear-projection.png`
 
 使用规则见 `../references/example-gallery.md`。这些 examples 只做整体图面校准，不作为可复制模板。

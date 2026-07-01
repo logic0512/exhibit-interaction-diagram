@@ -291,6 +291,162 @@
         "投影里的汽车模型有整体到拆解的层级反馈，例如车身外壳、底盘、动力系统、轮组、内饰，并保持简化概念图而非真实品牌/CAD 渲染。"
       ],
       "known_failure_to_prevent": "放入式手势识别被画成普通触摸台面；汽车模型过度 CAD 化或出现真实品牌；投影源/光路/落点关系不清。"
+    },
+    {
+      "id": "T11_multi_object_reconstruction_and_color_restraint",
+      "title": "Multi-object reconstruction with restrained color",
+      "mode": "direct_image",
+      "user_prompt": "做一个标本复原互动装置，孩子选择不同的岩石或化石标本，触发旁边的透明显示面，看到对应古生物从骨骼、外形到生态环境的复原过程。",
+      "space_assumption": "中等亮度展厅，展柜旁独立轻量台座，亲子近距离操作。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/visual-dna.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/02-child-low-reach.png",
+        "assets/visual-system/atomic/actions/01-place-to-trigger.png",
+        "assets/visual-system/atomic/results/05-unlock-reveal.png"
+      ],
+      "pass_criteria": [
+        "至少有 2-4 个岩石或化石标本，孩子能自然选择或放置，不只有一块静态石头。",
+        "透明显示面或反馈区有骨骼、外形、生态环境等多层复原状态，能看出选择触发后的变化。",
+        "装置是独立轻量或家具化台座，不额外生成大型投影、全高结构或无关屏幕。",
+        "人物仍是统一空白椭圆头线稿 IP，儿童触达高度合理。",
+        "蓝色/青色只用于局部数字反馈或透明显示边缘，生态环境可使用柔和绿色、暖灰或琥珀辅助，不整张蓝色化。"
+      ],
+      "known_failure_to_prevent": "只画一块石头和一块蓝色屏幕，玩法不清；或者把所有复原层、屏幕和标注都画成同一种蓝色。"
+    },
+    {
+      "id": "T12_globe_projection_optical_axis",
+      "title": "Globe crank projection optical-axis regression",
+      "mode": "direct_image",
+      "user_prompt": "做一个手摇地球仪互动装置，观众转动手摇把手选择不同区域，装置用投影展示该区域的气候、生态和路线信息。",
+      "space_assumption": "中等亮度或半暗展厅，独立轻量地球仪台座，单人操作，允许投影但必须满足镜头方向和目标面关系。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/01-projection-source-path-target.png",
+        "assets/visual-system/atomic/carriers/07-mechanical-response.png"
+      ],
+      "pass_criteria": [
+        "手摇把手、地球仪旋转和区域高亮形成清晰的机械触发链路。",
+        "如果使用投影，必须先看出投影机镜头朝向，再沿镜头光学轴线布置目标面；目标面不能默认出现在右侧墙上。",
+        "投影目标介质明确，可以是墙面、幕布、桌面、模型表面或半透明屏，但必须位于镜头前方并面向光束。",
+        "投影内容与选中区域对应，例如气候、生态、路线或环境信息，不是通用蓝色 UI。",
+        "如果光学轴线无法画清，优先使用内置屏、灯箱、透明显示面或实体模型反馈，不硬画墙面投影。"
+      ],
+      "known_failure_to_prevent": "为了满足投影距离和内容可读性，把投影结果固定画到右侧墙面，但投影机镜头并没有朝向该墙面。"
+    },
+    {
+      "id": "T13_film_projector_optical_axis",
+      "title": "Film memory projector optical-axis regression",
+      "mode": "direct_image",
+      "user_prompt": "做一个城市记忆胶片互动装置，观众手摇转轴推进胶片，选中的记忆片段通过投影放大显示出来。",
+      "space_assumption": "半暗展区，独立轻量胶片放映台座，墙面或小幕布可作为投影介质，但必须和放映镜头方向一致。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/01-projection-source-path-target.png",
+        "assets/visual-system/atomic/carriers/07-mechanical-response.png"
+      ],
+      "pass_criteria": [
+        "手摇转轴、胶片推进、选中胶片帧和放映结果形成一条清晰链路。",
+        "放映镜头、光锥中心线、目标屏幕/墙面必须同轴或近似同轴；不能镜头朝一边、画面出现在另一边。",
+        "目标介质明确且位于镜头前方，例如小幕布、墙面屏、半透明屏或投影框，不是空中悬浮画面。",
+        "投影结果是城市记忆/档案片段，可用黑白或琥珀色调，不被蓝色光效主导。",
+        "人物站在侧边操作，不遮挡放映光路。"
+      ],
+      "known_failure_to_prevent": "胶片装置有放映镜头和投影画面，但两者方向不一致；投影内容被默认放在右侧墙面或悬浮画面上。"
+    },
+    {
+      "id": "T14_projection_target_medium_diversity_globe",
+      "title": "Globe projection target medium diversity",
+      "mode": "direct_image",
+      "user_prompt": "做一个手摇地球仪互动装置，观众转动地球仪选择区域，投影反馈展示该区域的气候、路线和生态信息，但希望装置不要变成旁边放一块屏幕。",
+      "space_assumption": "中等亮度或半暗展厅，独立轻量地球仪台座，投影可用但应优先贴合地球仪、台座表面、半透明弧形层或局部模型介质。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/01-projection-source-path-target.png",
+        "assets/visual-system/atomic/carriers/07-mechanical-response.png"
+      ],
+      "pass_criteria": [
+        "手摇把手、地球仪旋转和区域高亮清楚。",
+        "投影目标介质优先是地球仪表面、环绕半透明弧形层、台座局部表面、桌面地图或模型介质，不默认独立右侧幕布。",
+        "投影源、光轴和目标介质仍然物理成立，不能为了多样性牺牲光路方向。",
+        "反馈内容贴合介质形态，例如沿球面或弧形层显示气候、路线和生态符号。",
+        "如果使用外部屏幕或幕布，必须说明它为什么比地球仪/模型/半透明层更适合当前内容。"
+      ],
+      "known_failure_to_prevent": "为了修正光轴，把地球仪互动固定画成左边手摇地球仪、右边独立投影幕布，导致投影类构图同质化。"
+    },
+    {
+      "id": "T15_projection_target_medium_diversity_film",
+      "title": "Film memory projection target medium diversity",
+      "mode": "direct_image",
+      "user_prompt": "做一个城市记忆胶片互动装置，观众手摇推进胶片，投影或背光反馈放大选中的记忆片段，但不要又变成旁边一块独立幕布。",
+      "space_assumption": "半暗展区，独立轻量胶片台座，可用背投、内嵌光箱、半透明片窗、胶片本体放大或小型近距离投影介质。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/01-projection-source-path-target.png",
+        "assets/visual-system/atomic/carriers/07-mechanical-response.png"
+      ],
+      "pass_criteria": [
+        "手摇转轴、胶片推进、选中胶片帧和反馈结果清楚。",
+        "反馈介质优先是内嵌背投片窗、半透明放大片、光箱、胶片本体局部放大或装置上的小型投影介质，不默认右侧独立幕布。",
+        "如果仍使用投影，镜头、光轴和目标介质必须成立；如果使用背光/光箱，也要看出这是合理介质。",
+        "记忆内容用黑白或琥珀档案调，和胶片/片窗结合，而不是外接大屏 UI。",
+        "构图不能和 T12/T13 的右侧幕布方案高度同质。"
+      ],
+      "known_failure_to_prevent": "胶片装置每次都变成左侧手摇胶片机、右侧独立幕布，失去胶片本体和装置介质的表达。"
     }
   ]
 }

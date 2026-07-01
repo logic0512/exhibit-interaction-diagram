@@ -66,6 +66,16 @@
 - 儿童脚下触发点、投影源、台阶内容和城市时间线反馈关系清楚。
 - 投影内容不是空白光效，而是城市发展阶段、年代和代表场景。
 
+### 新增校准案例
+
+这些案例用于展示不同玩法和不同反馈介质，尤其是识别复原、投影目标介质和装置内嵌反馈的处理方式。
+
+| 案例 | 适合校准 | 图 |
+|---|---|---|
+| 标本复原 | 多对象选择、多层状态反馈、儿童低位触达 | ![标本复原](assets/examples/09-specimen-reconstruction.png) |
+| 地球仪球面投影 | 投影反馈贴合装置本体、球面/透明弧目标介质 | ![地球仪球面投影](assets/examples/10-globe-surface-arc-projection.png) |
+| 胶片内嵌背投 | 机械输入、选中胶片帧、内嵌光箱/背投反馈 | ![胶片内嵌背投](assets/examples/11-film-embedded-rear-projection.png) |
+
 ---
 
 ## 快速开始
@@ -179,6 +189,13 @@ python3 scripts/check-test-prompts.py
 - `T02_yangtze_fishing_ban_table`
 - `T08_abstract_concept_to_action`
 
+投影相关改动建议额外检查：
+
+- `T12_globe_projection_optical_axis`
+- `T13_film_projector_optical_axis`
+- `T14_projection_target_medium_diversity_globe`
+- `T15_projection_target_medium_diversity_film`
+
 评分使用 `references/validation-rubric.md`。低于 80 分不要视为通过。
 
 ---
@@ -205,7 +222,7 @@ python3 scripts/check-test-prompts.py
 - atomic assets
 - finished examples
 - showcase 案例图
-- 回归测试样例
+- 15 个回归测试样例
 
 正式公开推广前，建议继续补：真实安装输出截图、GitHub release notes、skills.sh 页面渲染检查和 marketplace 发布检查。
 

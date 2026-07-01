@@ -10,7 +10,9 @@
 - 白底或浅灰底，大量留白。
 - 灰黑色手绘线稿为主，线条轻微抖动。
 - 少量黄色或橙色用于交互热点、箭头、重点标注。
-- 少量蓝色或青色用于投影、感应、屏幕、光束、数字反馈。
+- 少量蓝色或青色只用于投影、感应、屏幕、光束、数字反馈的局部区域。
+- 不能让蓝色/青色成为每张图的默认主色。根据主题选择克制辅助色：生态可用柔和绿色，历史/记忆可用琥珀或黑白照片调，机械/结构可用暖灰，选择/警示可用红橙，特殊区域可用淡紫。
+- 每张图尽量只保留 1 个主反馈色和 1 个辅助强调色；信息层、界面、光效和标注不要全部同色。
 - 可以有少量黑场区域表达沉浸空间，但不要每张都黑场。
 - 投影类图也不能整张变成黑场渲染。只允许投影面、投影路径或局部环境变暗，画面主体仍应保持浅灰/白底方案草图感。
 - 中文手写标注要少、短、贴近动作或反馈点。
@@ -48,6 +50,7 @@
 - 不要把投影互动画成暗场舞美效果图或完成渲染图。
 - 不要把所有组件都堆进去。
 - 不要使用大段文字解释玩法。
+- 不要把所有屏幕、投影、感应范围和信息层都画成同一种蓝色。
 
 ## 标注规则
 
@@ -59,7 +62,7 @@
 
 ## 提示词短句
 
-Use a clean exhibition concept sketch style: white or light gray background, gray-black hand-drawn line art, clear scale, sparse yellow/orange interaction annotations, cyan/blue for projection or sensing feedback, and enough empty space. It should feel like a professional exhibit design sketch, not a poster, UI mockup, PPT infographic, children's illustration, or polished 3D render.
+Use a clean exhibition concept sketch style: white or light gray background, gray-black hand-drawn line art, clear scale, sparse yellow/orange interaction annotations, restrained local cyan/blue only for projection, sensing, screen glow, or digital feedback, and enough empty space. Choose one theme-appropriate secondary accent color when needed; do not make the image blue-dominant. It should feel like a professional exhibit design sketch, not a poster, UI mockup, PPT infographic, children's illustration, or polished 3D render.
 
 Choose the aspect ratio that best explains the gameplay; do not force every image to be horizontal.
 
