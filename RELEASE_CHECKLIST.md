@@ -21,7 +21,7 @@ This checklist is for preparing `exhibit-interaction-diagram` as a GitHub-ready 
 
 ## Before pushing to GitHub
 
-- [ ] Confirm the final GitHub path is `logic0512/exhibit-interaction-diagram`.
+- [x] Confirm the final GitHub path is `logic0512/exhibit-interaction-diagram`.
 - [ ] Run `python3 scripts/check-test-prompts.py`.
 - [ ] Run Luban repo check.
 - [ ] Confirm no private paths, temporary exports, working files, or customer files are included.
