@@ -348,7 +348,9 @@
       ],
       "pass_criteria": [
         "手摇把手、地球仪旋转和区域高亮形成清晰的机械触发链路。",
+        "手摇把手必须有清楚的转轴座、安装板或台座连接面；人物只能握住末端，不能让把手从手臂、身体或儿童身上长出来。",
         "如果使用投影，必须先看出投影机镜头朝向，再沿镜头光学轴线布置目标面；目标面不能默认出现在右侧墙上。",
+        "投影源只能有一个有效出光口，光束必须从前置镜头、顶部反射窗、斜面出光槽或隐藏开口其中一个位置发出，不能前镜头和顶部孔同时发光。",
         "投影目标介质明确，可以是墙面、幕布、桌面、模型表面或半透明屏，但必须位于镜头前方并面向光束。",
         "投影内容与选中区域对应，例如气候、生态、路线或环境信息，不是通用蓝色 UI。",
         "如果光学轴线无法画清，优先使用内置屏、灯箱、透明显示面或实体模型反馈，不硬画墙面投影。"
@@ -410,7 +412,9 @@
       ],
       "pass_criteria": [
         "手摇把手、地球仪旋转和区域高亮清楚。",
+        "手摇把手固定在台座正面、侧面或独立支架上，能看见转轴/安装面；成人手只握住把手端部，儿童身体不遮挡或承载把手。",
         "投影目标介质优先是地球仪表面、环绕半透明弧形层、台座局部表面、桌面地图或模型介质，不默认独立右侧幕布。",
+        "投影源只能有一个有效出光口；如果是台面短焦投影，前镜头或顶部反射窗只能二选一发光，光束从该口径沿光轴到达地球仪/半透明弧。",
         "投影源、光轴和目标介质仍然物理成立，不能为了多样性牺牲光路方向。",
         "反馈内容贴合介质形态，例如沿球面或弧形层显示气候、路线和生态符号。",
         "如果使用外部屏幕或幕布，必须说明它为什么比地球仪/模型/半透明层更适合当前内容。"
@@ -447,6 +451,68 @@
         "构图不能和 T12/T13 的右侧幕布方案高度同质。"
       ],
       "known_failure_to_prevent": "胶片装置每次都变成左侧手摇胶片机、右侧独立幕布，失去胶片本体和装置介质的表达。"
+    },
+    {
+      "id": "T16_human_device_boundary_globe_crank",
+      "title": "Human-device boundary for a family globe crank",
+      "mode": "direct_image",
+      "user_prompt": "做一个亲子手摇地球仪互动装置，成人带孩子转动手摇把手选择区域，地球仪和半透明信息弧显示气候、生态路线和区域高亮。",
+      "space_assumption": "中等亮度或半暗展厅，独立轻量地球仪台座，亲子近距离停留，手摇把手安装在儿童不会碰撞的位置。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/07-mechanical-response.png",
+        "assets/visual-system/atomic/carriers/01-projection-source-path-target.png"
+      ],
+      "pass_criteria": [
+        "亲子人物沿用统一空白椭圆头线稿 IP，成人和儿童只体现身高差、姿态差。",
+        "手摇把手固定在台座正面、侧面或独立短支架上，清楚显示转轴座、安装板、短轴或支撑件。",
+        "成人手只握住把手末端，手臂和身体不遮挡把手固定端；把手、支架、线缆或设备外壳不能和人物身体融合。",
+        "儿童站位和把手保持清楚间距，不被把手穿过身体，也不成为隐藏支架。",
+        "投影源只有一个有效出光口，光束起点与镜头/出光槽一致，不能同一台设备出现前镜头和顶部孔同时发光。",
+        "把手转动、地球仪区域高亮和信息弧反馈形成清楚链路，反馈内容不是通用蓝色 UI。"
+      ],
+      "known_failure_to_prevent": "机械把手或支架看起来从成人手臂、衣服、儿童身体里长出来，导致人物变成设备安装面。"
+    },
+    {
+      "id": "T17_wearable_device_exception",
+      "title": "Wearable and handheld device boundary exception",
+      "mode": "direct_image",
+      "user_prompt": "做一个穿戴式互动装置，观众戴上轻量 VR 眼镜和手持控制器，转动身体选择城市历史街区，前方小型屏幕同步显示街区变化。",
+      "space_assumption": "中等亮度室内展区，单人站位体验，前方有小型同步屏，穿戴设备由观众身体承载。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/05-display-surface.png",
+        "assets/visual-system/atomic/carriers/02-sensing-range.png"
+      ],
+      "pass_criteria": [
+        "人物仍沿用统一空白椭圆头线稿 IP，不变成写实游客或游戏角色。",
+        "VR 眼镜和手持控制器允许由人物承载，但必须有头带、手柄外壳、腕带或清楚握持结构。",
+        "穿戴设备不能像无固定方式的硬件块粘在人脸、手臂或衣服上。",
+        "身体转向、手持控制器、感应范围和前方小屏反馈形成清楚互动链路。",
+        "前方小屏显示城市街区变化，不生成无关大型投影或外接幕布。"
+      ],
+      "known_failure_to_prevent": "把人机边界规则理解成所有人体承载设备都失败，导致 VR、手持控制器或互动服无法表达；或反过来把设备无结构地贴在人身上。"
     }
   ]
 }

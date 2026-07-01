@@ -73,6 +73,7 @@ LED 点阵屏：
 约束：
 
 - 必须看得出“从哪里投到哪里”。
+- 每个投影源只能有一个有效出光口。普通投影机从前置镜头出光；超短焦或嵌入式设备可以从顶部反射窗、斜面出光槽或隐藏开口出光，但前镜头、顶部孔和侧面开口不能同时发光。
 - 如果投影源是隐藏设备，也要用顶部小点位、墙面小开口、设备轮廓或短标注说明“隐藏投影源”。
 - 不要把“人触发到墙面反馈”的交互联动箭头误画成投影路径；投影路径必须从投影源出发。
 - 不要只画一团光。
@@ -204,6 +205,8 @@ LED 点阵屏：
 约束：
 
 - 不要孤立画控件。
+- 控件必须有安装锚点：按钮有面板，旋钮有底座，把手/手摇柄有转轴座，滑杆有轨道，拉杆有支点，道具有可拿取本体或放置区。
+- 对固定展项控件，人手只能握持或触碰，不能替代控件的支架、转轴或安装面。避免把控件画得像从手掌、手臂、衣服或儿童身体上长出来。若控件本身是手持控制器或穿戴设备，必须画出手柄外壳、腕带、绑带、袖套或衣物集成结构。
 - 不要把操作台固定画成标准控制台。
 - 不要画成复杂工业设备图，除非创意明确需要工业机械语汇。
 - 儿童向展项要让操作台高度、按钮大小、触摸位置符合儿童使用。
@@ -222,10 +225,12 @@ LED 点阵屏：
 
 约束：
 
+- 手摇柄、手轮、拉杆、滑块、转盘、开合件必须显示固定端、转轴座、支架、轨道或安装面，让人看出它属于装置。
+- 人物可以握住末端或施力点，但固定机械件主体不能和人物身体轮廓重合到失去边界；儿童身体尤其不能成为隐藏支架。穿戴式机械或操作服只有在用户明确要求时才允许，并必须画出绑带、衣物结构、关节模块或固定扣。
 - 不要过度机械细节。
 - 不要让结构复杂到看不懂玩法。
 - 不要把所有机械件都画成同一种盒体、圆盘或控制台。
 
 ## 提示词短句
 
-Use recognizable exhibition carrier cues only when they are relevant, not rigid templates. Screens need a readable display surface with theme-specific simplified content, projections need a clear source-path-target relationship and content mapped to the target, lighting needs visible feedback range and meaning, sensors need detection zones, sound needs source, direction, and content type, floor triggers need participant alignment, and operation tables or mechanical objects may have custom forms that match the exhibit idea and spatial constraints. The internal asset set calibrates recognizability, not exact shapes to copy.
+Use recognizable exhibition carrier cues only when they are relevant, not rigid templates. Screens need a readable display surface with theme-specific simplified content, projections need one unambiguous emitting aperture plus a clear source-path-target relationship, lighting needs visible feedback range and meaning, sensors need detection zones, sound needs source, direction, and content type, floor triggers need participant alignment, and operation tables or mechanical objects may have custom forms that match the exhibit idea and spatial constraints. Fixed physical controls must be visibly mounted to the installation: show the panel, pivot, shaft, track, bracket, base, or prop body. The participant may grip the control, but fixed hardware must not visually fuse with the person's hand, arm, torso, clothing, or child body. Wearable or handheld devices are allowed only when the concept calls for them, and must show straps, handles, controller shells, garment modules, or other readable attachment structures. The internal asset set calibrates recognizability, not exact shapes to copy.

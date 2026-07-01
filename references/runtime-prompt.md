@@ -35,9 +35,10 @@ Spatial and hardware grounding:
 - Carrier and device form: {independent lightweight / furniture-like / local installation / large structure only if necessary}
 - Projection type if used: {front projection / short-throw / ultra-short-throw / rear projection / table projection / model mapping / hidden source / projection blending / none}
 - Projection target fit if used: {why the target medium is best: object surface / tabletop / model / device body / floor path / scrim / translucent screen / rear projection / wall or freestanding screen only when justified}
-- Projection optical axis if used: source position {where}; lens direction {where it points}; target medium {wall/screen/tabletop/model/scrim/object/rear projection}; target position {in front of the lens}; throw distance {approximate}
+- Projection optical axis if used: source position {where}; single emitting aperture {front lens/top mirror slot/angled outlet/hidden opening}; lens direction {where it points}; target medium {wall/screen/tabletop/model/scrim/object/rear projection}; target position {in front of the lens}; throw distance {approximate}
 - Working distance: {reasonable distance or path between device, sensing area, projection/light/sound source, and target; show source-to-target direction along the lens axis}
 - Human reach: {where the person stands and how hand/foot/gaze naturally reaches the control}
+- Human-device boundary: {where each handle, crank, lever, slider, button, prop, or device part is mounted; how the hand only grips/touches it without the hardware fusing with the body}
 - Hardware cues: {frames, thickness, seams, support, sensing volume, projection cone, lighting beam, sound direction, maintenance door, hidden controller if needed}
 
 Visual lock references:
@@ -56,6 +57,7 @@ Carrier-specific rules:
 
 Examples:
 - Projection: show source, path, and target; do not place projector/spotlight flush against the target unless it is explicitly embedded.
+- Projection aperture rule: each projection source has one active emitting aperture only. The beam must start from that visible lens, top mirror slot, angled outlet, hidden opening, or rear-projection source. Do not make a front lens glow while the beam starts from a top slot or another surface.
 - Projection feasibility: the light path starts at the projection source, not at the user's hand, button, or annotation arrow. A normal front projector needs visible throw distance; a near-wall source must read as short-throw, rear projection, or embedded projection with correct angle and support.
 - Projection optical-axis rule: first decide where the lens points, then place the target surface in front of that lens. Do not default to a right-side wall or distant wall just to show projection content. The lens direction, beam centerline, target surface, and projected image must align.
 - Projection diversity rule: projection is not automatically an external wall or freestanding screen. Prefer projecting onto the object, model, tabletop, floor path, device surface, translucent layer, or rear-projection surface when that better expresses the gameplay. Use an external screen only when the content needs a separate readable display.
@@ -64,7 +66,7 @@ Examples:
 - Hand recognition: show an open sensing bay, recess, frame, or transparent detection volume; the hand enters it naturally.
 - Lighting/spotlight: show the lamp body, beam, illuminated zone, and content revealed by the beam; use reachable controls for manual movement.
 - Sound: show source, listening position, and sound direction.
-- Mechanical operation: show handle, crank, wheel, slider, pivot, or prop plus visible movement result.
+- Mechanical operation: show handle, crank, wheel, slider, pivot, or prop plus visible mounting base, shaft, bracket, track, or panel, and the movement result.
 
 Composition:
 {one main diagram archetype and the specific spatial arrangement}
@@ -91,11 +93,14 @@ Hard constraints:
 - Prefer independent lightweight, furniture-like, or local installation forms. Avoid floor-to-ceiling rails, gantries, full-height columns, ceiling-to-floor frames, trusses, or architectural-scale structures unless functionally necessary.
 - Device working distance must be believable. Projection, spotlight, scanning, sensing, and directional sound need a visible gap, path, or detection volume.
 - Projection distance and direction must be believable. Show the source, beam direction, target surface, and landing content. Keep interaction-control arrows visually separate from projection beams.
+- Projection source must have one unambiguous emitting aperture. If the beam exits a top mirror slot, do not also show an active front lens; if the front lens is active, the beam must begin at the front lens.
 - Projection target placement must follow the lens optical axis. The projected image cannot appear on a side wall, right wall, or rear wall unless the projector lens clearly points at that surface and the surface faces the beam.
 - If a physically aligned projection target cannot be shown clearly, switch the feedback carrier to a built-in screen, transparent display, lightbox, model surface, or physical reveal instead of forcing wall projection.
 - Avoid projection composition sameness. Do not make every projection concept into a left-side device plus a right-side freestanding screen. Choose the target medium and composition from the idea: object-mapped, tabletop/model-mapped, floor/path, translucent/rear projection, wall/screen, or embedded display.
 - If the interaction object itself can carry the projected feedback, keep the feedback on that object or its immediate surface instead of adding a separate screen.
 - Human reach must be believable. Do not stretch arms, place controls outside natural reach, or let children use adult-height controls without a reachable interface.
+- Keep fixed exhibition hardware physically separate from the body. Fixed handles, cranks, wheels, levers, sliders, buttons, brackets, cables, projectors, screens, sensors, and device shells must not grow out of or fuse with any person's hand, arm, torso, clothing, or child body.
+- A hand may grip a control, but any fixed control must visibly belong to the installation or a handheld prop: show the pivot plate, mounting base, shaft, track, bracket, tabletop, pedestal face, wall mount, floor base, or prop body. Wearable or handheld devices are allowed only if the concept explicitly calls for them, and must show a head strap, wrist strap, shoulder strap, belt, sleeve, clasp, controller shell, or garment-integrated module.
 - Avoid blue overuse. Do not turn every screen, projection, label, glow, information layer, and feedback object into the same cyan/blue.
 - Do not copy reference assets or examples literally. Use them only to stabilize character style, carrier readability, and diagram language.
 - Do not make a poster, advertisement, PPT infographic, UI mockup, wiring diagram, children's illustration, game concept art, or polished product render.
@@ -124,7 +129,7 @@ Regenerate the image with the same installation idea, but add enough visual evid
 投影不可实现：
 
 ```text
-Regenerate the image so the projection is physically plausible. First lock the lens optical axis: source position, lens direction, target medium, target position, and throw distance. Place the projection target directly in front of the lens along the beam centerline; do not default to a right-side wall. Show source, beam direction, target surface, and landing content aligned. Separate interaction arrows from the projection beam.
+Regenerate the image so the projection is physically plausible. First lock one active emitting aperture for each source: front lens, top mirror slot, angled outlet, hidden opening, or rear-projection source. The beam must begin at that aperture, not another glowing part of the same device. Then lock the lens optical axis: source position, lens direction, target medium, target position, and throw distance. Place the projection target directly in front of the lens along the beam centerline; do not default to a right-side wall. Show source, beam direction, target surface, and landing content aligned. Separate interaction arrows from the projection beam.
 ```
 
 投影构图同质化：
@@ -137,6 +142,12 @@ Regenerate the image with a projection target medium that fits the concept inste
 
 ```text
 Regenerate the image with restrained color. Keep cyan/blue only for local screen, projection, sensing, or digital feedback. Use theme-appropriate secondary colors for content layers, such as soft green, amber, warm gray, red-orange, black-white photo tone, or pale violet. Do not make the whole image blue-dominant.
+```
+
+人机边界错误：
+
+```text
+Regenerate the image so fixed exhibition hardware is physically separate from the human body and visibly mounted to the installation. A participant may hold the knob or touch the control, but the control's pivot, base, shaft, track, bracket, tabletop, pedestal face, wall mount, floor base, or handheld prop body must be readable. Do not let fixed handles, cranks, levers, sliders, buttons, brackets, projectors, screens, sensors, cables, or device shells grow out of the hand, arm, torso, clothing, or child body. If the concept explicitly uses wearable or handheld devices, show readable straps, handles, controller shells, garment modules, or attachment structures instead of treating the body as an unexplained mounting surface.
 ```
 
 组件太多：
