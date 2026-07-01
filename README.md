@@ -150,7 +150,7 @@ cp -R exhibit-interaction-diagram ~/.codex/skills/
 | 设备 | 常被画成抽象发光物 | 要符合常见展陈硬件逻辑、安装方式和工作距离 |
 | 空间 | 容易忽略尺度和亮度 | 先判断空间大小、亮度、人流、儿童尺度和载体适配 |
 | 反馈内容 | 常见空屏、蓝色 UI、泛光效 | 屏幕/投影/灯光/声音/机械反馈必须承载主题信息 |
-| 失败处理 | 靠重新描述 | 有 qa-checklist、validation-rubric 和 test-prompts 回归样例 |
+| 失败处理 | 靠重新描述 | 内置质检规则，会优先检查玩法、尺度、设备和反馈是否成立 |
 
 ---
 
@@ -167,36 +167,20 @@ references/runtime-prompt.md     # 最终生图短提示词母版
 assets/visual-system/atomic/     # 人物、动作、载体、结果的单意图资产
 assets/examples/                 # 完成图 examples，只做低频图面校准
 examples/showcase/               # 公开 README 使用的稳定案例图
-test-prompts.json                # 回归测试案例
-scripts/check-test-prompts.py    # 测试样例结构检查
 ```
 
 `outputs/` 是本地测试输出目录，不进入发布仓库。
 
 ---
 
-## 验证与测试
+## 质量控制
 
-结构检查：
+这个 skill 会在生成前后关注这些质量点：
 
-```bash
-python3 scripts/check-test-prompts.py
-```
-
-建议至少 dry-run 或真实生图这 3 个核心案例：
-
-- `T01_tree_spotlight_lightweight_regression`
-- `T02_yangtze_fishing_ban_table`
-- `T08_abstract_concept_to_action`
-
-投影相关改动建议额外检查：
-
-- `T12_globe_projection_optical_axis`
-- `T13_film_projector_optical_axis`
-- `T14_projection_target_medium_diversity_globe`
-- `T15_projection_target_medium_diversity_film`
-
-评分使用 `references/validation-rubric.md`。低于 80 分不要视为通过。
+- 人物是否真的参与核心动作。
+- 设备距离、投影方向、人体可达范围是否成立。
+- 屏幕、投影、灯光、声音和机械反馈是否承载主题信息。
+- 图面是否像一张能沟通玩法的展项装置图，而不是海报、PPT、设备清单或纯 UI。
 
 ---
 
@@ -222,7 +206,6 @@ python3 scripts/check-test-prompts.py
 - atomic assets
 - finished examples
 - showcase 案例图
-- 17 个回归测试样例
 
 ## License
 
