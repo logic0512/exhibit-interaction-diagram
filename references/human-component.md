@@ -1,0 +1,113 @@
+# 人物组件
+
+## 核心规则
+
+每张展项装置交互图都必须有人物。人物不是装饰，也不只是比例尺，而是玩法的第一解释者。
+
+如果去掉人物后，观众看不出这个展项怎么参与，说明人物组件失败。
+
+人物必须像一个统一视觉 IP 一样稳定。不要每次生成不同风格、不同身份、不同服装的写实人物。变化只能来自身高、姿态、动作和数量，不来自角色设计风格。
+
+合格人物 atomic 资产位于：`assets/visual-system/atomic/human/`。生成前如需校准人物，只选择和当前玩法相关的单张人物资产，例如成人、儿童、亲子尺度、触摸、低位触达、脚下触发或观看反馈。
+
+不要使用早期退稿人物图，它们因为人物形象过多、风格不统一或过于写实而被移出 skill 包。
+
+## 人物硬锁规则
+
+人物是最高优先级视觉约束。只要任务要生图，就必须先选 1 张人物 atomic 资产作为显性参考，并让所有人物沿用同一人物 IP。
+
+生成时要把人物说得比“hand-drawn human figure”更具体：
+
+- 空白椭圆头，无头发、无五官、无表情。
+- 统一的简化长袖上衣、长裤和简化鞋，不出现裙子、背包、帽子、图案服装或个性化穿搭。
+- 灰黑细线轮廓，浅灰铅笔阴影，白色或浅灰填充。
+- 成人和儿童是同一套人物原型的不同高度版本，不是不同角色。
+- 人物可以转身、侧身、弯腰、伸手、踩踏或观看，但外形语言不能变化。
+
+如果画面出现明显发型、真实五官、复杂衣服、写实背影、儿童绘本气质、时尚插画气质，或每个人看起来像不同角色，必须判定失败并重生成。
+
+## 视觉形态
+
+- 灰黑色手绘简化人物，细线轮廓，轻微草图感。
+- 空白椭圆头，无五官，不画真实人像。
+- 不画头发、复杂服装、品牌、图案、背包、帽子、裙装或发型细节。
+- 人物外形必须统一：同一套头身比例、线条粗细、服装简化方式、面部省略方式。
+- 成人、儿童、亲子不是不同角色设计，只是同一人物原型的身高版本。
+- 人物身高要根据展项对象选择：成人、儿童、亲子、学生群体都可以出现。
+- 用身高差表达使用视角：儿童展项要让孩子的眼高、手高、站位和装置高度匹配。
+- 人物高度要和装置、屏幕、展墙、桌台保持合理比例，不能所有人都画成同一成人尺度。
+- 人物本体不使用高饱和色，避免抢走交互反馈层级。
+
+## 角色层级
+
+每张图优先只用 1-3 人，但要根据玩法判断人物类型和身高。
+
+### 儿童参与者
+
+适合儿童馆、亲子展项、低龄科普、游戏式互动。儿童人物要明显低于成人，动作和视线高度要贴近儿童真实使用方式：
+
+- 伸手够按钮或低位屏幕
+- 踩踏地面点位
+- 趴近观察桌面或箱体
+- 抬头看墙面或高处反馈
+- 和成人形成亲子陪伴关系
+
+不要把儿童画成幼稚卡通角色；仍然保持展项方案草图里的简化人物。
+
+### 主参与者
+
+必须出现。正在完成核心动作：
+
+- 触摸屏幕或实体按钮
+- 伸手悬停感应
+- 挥手或做手势
+- 踩踏地面点位
+- 转动旋钮、摇杆或机械把手
+- 拿起、放置或扫描道具
+- 靠近装置触发
+- 站入投影或感应区域
+- 与另一人协作完成操作
+
+### 辅助参与者
+
+可选。用于说明双人、多点位或协作关系。动作要和玩法有关，不能只是凑人数。
+
+### 旁观者或尺度人
+
+可选。只在需要说明展墙高度、空间尺度、排队观看或围观关系时加入。画面已经清楚时不要加。
+
+## 动作画法
+
+- 手必须指向或接触交互点。
+- 手臂长度必须可信。人物站位到操作点的距离要在自然伸手范围内，不要用夸张长手臂连接远处设备。
+- 操作点高度必须符合人物身高。成人、儿童、亲子不能共用同一高位操作点；儿童操作点要落在儿童可触达高度。
+- 眼睛或身体朝向必须指向反馈区域。
+- 脚下点位、触摸点、手势识别区要和人物位置对齐。
+- 如果设备本体需要上下移动、旋转或远距离瞄准，画面必须给人物一个可触达的把手、手轮、滑块、拉绳、低位控制件或扶手，而不是让人物直接够到高处或远处的设备。
+- 人物站位要给手臂、身体转向和观看反馈留出空间，不能被展台、墙体、栏杆或设备挡住。
+- 双人协作时，两个动作要互补，例如一人操作，一人观看结果。
+- 群体互动时，用少量人物和重复姿态暗示多人，不画密集人群。
+- 儿童视角展项要优先校准手能不能够到、眼睛看向哪里、装置是否过高。
+
+## 禁止
+
+- 不要真实照片式人物。
+- 不要可爱卡通人物。
+- 不要儿童绘本人物。
+- 不要时尚插画人物。
+- 不要在同一张图里混用多种人物画法。
+- 不要给每个人设计不同发型、衣着、气质。
+- 不要把人物画成主视觉海报模特。
+- 不要让人物孤立站在装置旁边。
+- 不要让人物动作和触发点脱节。
+- 不要让人物手臂伸到不可能的长度。
+- 不要让儿童触摸成人高度的高位控件。
+- 不要让人物隔着墙体、展台或护栏操作设备。
+
+## 提示词短句
+
+Use the selected visible human atomic reference as the strict character-style anchor for every person in the image. All human participants must share one consistent visual IP: blank oval heads, no hair, no facial features, simplified long-sleeve top, simple pants, simple shoes, gray-black hand-drawn outline, light pencil shading, no individualized clothing or personality styling. Adult and child variants are the same figure system at different heights, not different character designs. One main participant must perform the core interaction action, with hands, feet, gaze direction, and body orientation clearly connected to the trigger point and feedback area. Keep the participant's reach believable: the hand must be close enough to the handle, button, screen, prop, rail, or control point without stretched arms or impossible body posture. If the device moves beyond direct reach, show a reachable handle, slider, wheel, rope, or low control mechanism.
+
+When the exhibit is designed for children or families, include clear height differences between adults and children. Match the child's eye level, hand reach, and body posture to the installation height and interaction point.
+
+Do not generate hairstyles, realistic faces, detailed clothes, dresses, backpacks, hats, cartoon children, fashion illustration characters, realistic visitors, or different character styles in one image.

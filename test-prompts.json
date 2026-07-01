@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Regression prompts for testing whether the exhibit-interaction-diagram skill produces clear, playable, spatially plausible exhibition interaction concept images.",
+  "usage": "Use these prompts when changing SKILL.md, prompt brief, runtime prompt, visual assets, examples, hardware grounding, spatial rules, or QA rules. For each case, generate one image or dry-run the full prompt plan, then score it with references/validation-rubric.md.",
+  "cases": [
+    {
+      "id": "T01_tree_spotlight_lightweight_regression",
+      "title": "Tree ecology spotlight, lightweight device regression",
+      "mode": "direct_image",
+      "user_prompt": "我想做一个探照灯效果的多媒体装置，设计一个垂直的树木线稿图案在墙体，通过互动的探照灯上下移动，灯光印在墙体的位置，探照灯上的小屏幕会展示出来这颗树对应的位置的生物生态分布。",
+      "space_assumption": "中等亮度室内展墙，墙前有约 1m 操作距离。",
+      "must_read": [
+        "references/human-component.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/03-touch-wall.png",
+        "assets/visual-system/atomic/carriers/01-projection-source-path-target.png"
+      ],
+      "pass_criteria": [
+        "探照灯与墙面之间有可见工作距离和光束路径。",
+        "装置优先是独立轻量或家具化设备，例如落地台座、斜面小屏、手摇柄、旋钮、转轴、短支臂或可移动底座。",
+        "不得默认使用顶天立地轨道、龙门架、全高立柱、天花吊架或大型桁架。",
+        "人的手能自然够到操作件，不通过夸张伸手直接操作高处灯头。",
+        "小屏反馈内容与光斑所在树木层级对应，例如树冠昆虫、树干鸟类、根部真菌或生态分布。"
+      ],
+      "known_failure_to_prevent": "把上下移动画成顶天立地轨道，装置过重且破坏展墙空间秩序。"
+    },
+    {
+      "id": "T02_yangtze_fishing_ban_table",
+      "title": "Yangtze fishing-ban tangible table",
+      "mode": "direct_image",
+      "user_prompt": "我有一个长5米，宽4米的空间。在空间的中间，我想做一个宽2米，长4米的互动桌。在这个互动桌上，可以进行交互，了解关于长江禁渔的相关保护措施，长江的生态资源面貌。设置不同的道具，跟桌面的屏幕进行结合互动。",
+      "space_assumption": "5m x 4m 展厅，中间放置 4m x 2m 互动桌，长边操作。",
+      "must_read": [
+        "references/human-component.md",
+        "references/spatial-fit.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/actions/01-place-to-trigger.png",
+        "assets/visual-system/atomic/carriers/04-operation-surface.png"
+      ],
+      "pass_criteria": [
+        "桌面尺度与 5m x 4m 房间匹配，四周至少表现出站位和通行空间。",
+        "道具与桌面触发区有明确接触关系。",
+        "桌面内容不是通用 UI，而是长江流域、禁渔区、巡护线、湿地修复、鱼群恢复、江豚栖息等主题信息。",
+        "儿童和成人身高差、手部可达范围合理。",
+        "不额外加入无关大屏、投影、传感器或多套设备。"
+      ],
+      "known_failure_to_prevent": "人物风格漂移，或桌面变成漂亮地图但缺少道具触发和政策/生态反馈。"
+    },
+    {
+      "id": "T03_spiral_stair_city_timeline",
+      "title": "Spiral walking stair city timeline projection",
+      "mode": "direct_image",
+      "user_prompt": "我想做一个扶梯上的交互展项，能让孩子在旋转式的行走阶梯上走动的过程触发信息，了解一座城市的发展脉络。可以做投影，投在扶梯上。",
+      "space_assumption": "半暗室内，旋转式行走阶梯可作为投影目标，儿童行走触发。",
+      "must_read": [
+        "references/human-component.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/01-projection-source-path-target.png",
+        "assets/visual-system/atomic/results/02-path-light-up.png"
+      ],
+      "pass_criteria": [
+        "明确这是旋转式行走阶梯，不是电动扶梯。",
+        "投影源、光路和阶梯投影落点同时可见。",
+        "儿童脚下触发点和城市时间线节点对应。",
+        "城市发展内容要在台阶或墙面反馈里出现，例如河岸聚落、工业建设、轨道扩张、现代城市、未来生态。",
+        "画面保持展项方案草图感，不变成舞美效果图。"
+      ],
+      "known_failure_to_prevent": "把扶梯误画成电动扶梯，或只画漂亮投影而没有脚下触发链路。"
+    },
+    {
+      "id": "T04_bright_small_space_no_default_projection",
+      "title": "Bright small exhibit case, carrier selection test",
+      "mode": "idea_expansion_then_image",
+      "user_prompt": "我有一个很亮的小展柜旁空间，想让观众了解一件文物的修复过程，最好能互动一下。",
+      "space_assumption": "明亮小空间，展柜旁近距离停留，不能遮挡展品。",
+      "must_read": [
+        "references/idea-expansion.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/03-touch-wall.png",
+        "assets/visual-system/atomic/carriers/05-display-surface.png"
+      ],
+      "pass_criteria": [
+        "不默认使用普通投影作为主反馈。",
+        "优先采用小屏、实体翻页、局部灯箱、展示柜旁信息屏或道具触发。",
+        "互动不遮挡文物观看视线。",
+        "反馈内容展示修复前后、材料层、损伤点、工艺步骤，而不是通用界面。",
+        "装置轻便、局部、低侵入。"
+      ],
+      "known_failure_to_prevent": "明亮小空间仍画大投影或大型展台。"
+    },
+    {
+      "id": "T05_sound_memory_point",
+      "title": "Urban memory directional sound point",
+      "mode": "direct_image",
+      "user_prompt": "我想做一个城市记忆的声音点位，观众站到不同位置，会听到不同年代居民的口述故事，同时旁边有一个小屏幕显示这段声音对应的地点和照片。",
+      "space_assumption": "中等亮度展厅，单人或双人短暂停留。",
+      "must_read": [
+        "references/human-component.md",
+        "references/spatial-fit.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/06-sound-direction.png"
+      ],
+      "pass_criteria": [
+        "能看出声源位置、声音方向和人物听音站位。",
+        "小屏内容显示地点、年代、照片或简短口述片段，不被替换成大屏或悬浮卡。",
+        "不同点位的声音反馈关系清楚，但不堆成设备清单。",
+        "声音不是音符装饰，而是承担内容叙事。",
+        "人物朝向和身体姿态显示正在聆听。"
+      ],
+      "known_failure_to_prevent": "只画声波或音符，看不出声音内容和听音位置。"
+    },
+    {
+      "id": "T06_child_low_reach_science",
+      "title": "Child low-reach science parameter experiment",
+      "mode": "idea_expansion_then_image",
+      "user_prompt": "做一个给小朋友玩的水循环互动装置，让孩子通过操作实体机构理解降雨、河流和蒸发之间的关系。",
+      "space_assumption": "儿童展区，中等亮度，低位操作。",
+      "must_read": [
+        "references/human-component.md",
+        "references/idea-expansion.md",
+        "references/spatial-fit.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/02-child-low-reach.png",
+        "assets/visual-system/atomic/actions/05-parent-child-collaboration.png",
+        "assets/visual-system/atomic/results/06-branching-feedback.png"
+      ],
+      "pass_criteria": [
+        "儿童是主参与者，成人只陪伴或观看。",
+        "按钮、旋钮、手轮、滑杆或道具高度符合儿童可达范围。",
+        "反馈表现水循环关系，例如云、雨、河流、蒸发、植物吸收或水位变化。",
+        "不把孩子画成卡通角色，仍沿用统一人物 IP。",
+        "互动机制不是点击屏幕，而是实体操作触发反馈。"
+      ],
+      "known_failure_to_prevent": "儿童展项按成人高度设计，或人物风格变成儿童绘本。"
+    },
+    {
+      "id": "T07_mechanical_response_no_ui_takeover",
+      "title": "Mechanical response with physical feedback as main result",
+      "mode": "direct_image",
+      "user_prompt": "我想做一个机械互动装置，观众转动一个手轮，模型里的城市地下管网会一层层打开，让人看到水、电、交通等基础设施怎么连接。",
+      "space_assumption": "中等空间，单人操作，旁边可围观。",
+      "must_read": [
+        "references/human-component.md",
+        "references/spatial-fit.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/03-touch-wall.png",
+        "assets/visual-system/atomic/carriers/07-mechanical-response.png",
+        "assets/visual-system/atomic/results/07-scale-magnification.png"
+      ],
+      "pass_criteria": [
+        "手轮和人物手部自然连接。",
+        "机械模型有打开、升起、分层、旋转或联动的实体变化。",
+        "反馈主角是机械/模型变化，不被额外大屏 UI 抢走。",
+        "城市地下管网内容有水、电、交通等层级关系。",
+        "结构复杂度可读，不像工业蓝图或设备清单。"
+      ],
+      "known_failure_to_prevent": "机械互动被画成固定盒体加屏幕 UI，丢失实体响应。"
+    },
+    {
+      "id": "T08_abstract_concept_to_action",
+      "title": "Abstract concept expansion before image",
+      "mode": "idea_expansion_only",
+      "user_prompt": "我想表达一座城市如何在更新中保留记忆，同时又能让年轻人参与进来。",
+      "space_assumption": "空间未知，先按中等亮度室内展厅保守推断。",
+      "must_read": [
+        "references/idea-expansion.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md"
+      ],
+      "required_visual_assets": [],
+      "pass_criteria": [
+        "先输出 2-3 个互动方向，而不是直接生图。",
+        "每个方向都有参与动作、触发、反馈和结果。",
+        "推荐一个最适合画成单张装置交互图的方向。",
+        "不先从设备库拼装，不直接说大屏/投影/灯光套餐。",
+        "空间未知时说明保守空间假设。"
+      ],
+      "known_failure_to_prevent": "把抽象主题直接变成漂亮空间效果图，缺少参与动作。"
+    },
+    {
+      "id": "T09_sliding_screen_city_skyline",
+      "title": "Sliding-rail screen for generic city skyline buildings",
+      "mode": "direct_image",
+      "user_prompt": "一个长约3米的展台，嵌入了滑轨屏，通过滑动屏幕来查看城市天际线的代表建筑。",
+      "space_assumption": "明亮或中等亮度室内展区，近距离单人操作，3m 家具化展台。",
+      "must_read": [
+        "references/human-component.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/03-touch-wall.png",
+        "assets/visual-system/atomic/carriers/05-display-surface.png"
+      ],
+      "pass_criteria": [
+        "能看出 3m 左右的家具化展台，而不是墙面大屏或大型结构。",
+        "滑轨屏有明确轨道、屏幕厚度、可握持边缘或滑动方向。",
+        "人物手部自然推动/滑动屏幕，身体站位和手臂长度合理。",
+        "屏幕位置与城市天际线中的某个建筑剪影对应，并触发建筑信息反馈。",
+        "用户未指定具体城市时，使用泛化城市轮廓、编号建筑或代表建筑 A/B/C，不自动出现真实地标或真实城市名称。"
+      ],
+      "known_failure_to_prevent": "自动套用具体城市地标，例如上海、东方明珠或其他真实建筑，导致未指定主题被污染。"
+    },
+    {
+      "id": "T10_gesture_bay_car_projection_disassembly",
+      "title": "Dark-space hand-in gesture bay controls projected car disassembly",
+      "mode": "direct_image",
+      "user_prompt": "暗空间里，有一个手势识别互动装置，通过把手放到识别装置中，能够激活前方的投影，投影里是汽车的三维演示模型。然后手在装置中进行移动，可以对投影里的汽车进行拆解，了解汽车的构建。",
+      "space_assumption": "暗空间或半暗空间，可控光，单人站在轻量识别装置前，投影目标在前方 2-3m。",
+      "must_read": [
+        "references/human-component.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/03-touch-wall.png",
+        "assets/visual-system/atomic/carriers/01-projection-source-path-target.png",
+        "assets/visual-system/atomic/carriers/02-sensing-range.png",
+        "assets/visual-system/atomic/results/07-scale-magnification.png"
+      ],
+      "pass_criteria": [
+        "手势识别装置是独立轻量设备，并且能看出开放识别仓、凹槽、框口或半透明检测体积。",
+        "人物的手进入识别空间并有移动轨迹，不能只是按在普通触摸台面上。",
+        "投影源、投影路径和前方投影落点同时可见，人物不遮挡投影光路。",
+        "交互控制箭头和投影光路分开表达，不能把手势联动线误画成投影路径。",
+        "投影里的汽车模型有整体到拆解的层级反馈，例如车身外壳、底盘、动力系统、轮组、内饰，并保持简化概念图而非真实品牌/CAD 渲染。"
+      ],
+      "known_failure_to_prevent": "放入式手势识别被画成普通触摸台面；汽车模型过度 CAD 化或出现真实品牌；投影源/光路/落点关系不清。"
+    }
+  ]
+}

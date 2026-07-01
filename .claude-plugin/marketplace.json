@@ -1,0 +1,35 @@
+{
+  "name": "logic0512-exhibit-interaction-diagram",
+  "owner": {
+    "name": "logic0512",
+    "url": "https://github.com/logic0512"
+  },
+  "metadata": {
+    "description": "Generate clear exhibition interactive installation concept diagrams that explain gameplay, spatial fit, hardware logic, and media feedback content.",
+    "version": "0.1.0-alpha"
+  },
+  "plugins": [
+    {
+      "name": "exhibit-interaction-diagram",
+      "source": ".",
+      "description": "Turns exhibition, multimedia, museum, and spatial interactive ideas into readable installation gameplay diagrams. It supports direct image generation, idea expansion, failure review, hardware/spatial grounding, human-scale locking, carrier recognition, information-content design, and regression testing through curated prompts and visual assets.",
+      "version": "0.1.0-alpha",
+      "author": {
+        "name": "logic0512",
+        "url": "https://github.com/logic0512"
+      },
+      "license": "MIT",
+      "keywords": [
+        "exhibition",
+        "interactive-installation",
+        "multimedia",
+        "museum",
+        "concept-diagram",
+        "spatial-design",
+        "image-generation"
+      ],
+      "category": "design"
+    }
+  ]
+}
+

@@ -1,0 +1,66 @@
+# 视觉 DNA
+
+## 一句话
+
+清晰、专业、手绘、展项方案草图感。像设计师在方案会上画给甲方和制作团队看的装置交互概念图。
+
+## 默认画面
+
+- 画幅根据玩法选择，不强制横版。墙面、通道、群体空间可用横版；立式装置、塔形装置、儿童低视角或单体设备可用竖版；桌面、中心装置或方案板可用 3:2、4:3 或近方形。
+- 白底或浅灰底，大量留白。
+- 灰黑色手绘线稿为主，线条轻微抖动。
+- 少量黄色或橙色用于交互热点、箭头、重点标注。
+- 少量蓝色或青色用于投影、感应、屏幕、光束、数字反馈。
+- 可以有少量黑场区域表达沉浸空间，但不要每张都黑场。
+- 投影类图也不能整张变成黑场渲染。只允许投影面、投影路径或局部环境变暗，画面主体仍应保持浅灰/白底方案草图感。
+- 中文手写标注要少、短、贴近动作或反馈点。
+
+## 画面层级
+
+1. 人物动作最先被看见。
+2. 装置主体第二层。
+3. 触发区域和反馈区域第三层。
+4. 标注和箭头辅助说明。
+5. 氛围效果最后补充。
+
+## 可以使用的表达
+
+- 轴测空间草图
+- 侧视装置草图
+- 墙面互动场景
+- 桌面或操作台互动场景
+- 黑场沉浸局部
+- 简单剖面说明
+- 少量局部放大框
+- 儿童视角或亲子尺度图
+
+## 禁止
+
+- 不要商业海报。
+- 不要品牌广告视觉。
+- 不要 PPT 信息图。
+- 不要正式技术图纸。
+- 不要纯 UI 设计稿。
+- 不要游戏插画。
+- 不要儿童绘本。
+- 不要只做氛围效果图。
+- 不要过度写实 3D 渲染。
+- 不要把投影互动画成暗场舞美效果图或完成渲染图。
+- 不要把所有组件都堆进去。
+- 不要使用大段文字解释玩法。
+
+## 标注规则
+
+- 每张图最多 5-8 处中文短标注。
+- 每处尽量 2-8 个字。
+- 标注服务动作和反馈，例如“靠近触发”“墙面生成”“地面感应”“灯光反馈”。
+- 不要写长句。
+- 不要在左上角写大标题，除非用户要求做方案板。
+
+## 提示词短句
+
+Use a clean exhibition concept sketch style: white or light gray background, gray-black hand-drawn line art, clear scale, sparse yellow/orange interaction annotations, cyan/blue for projection or sensing feedback, and enough empty space. It should feel like a professional exhibit design sketch, not a poster, UI mockup, PPT infographic, children's illustration, or polished 3D render.
+
+Choose the aspect ratio that best explains the gameplay; do not force every image to be horizontal.
+
+For projection-based installations, keep the overall image in a light concept-sketch mode. Darken only the projection target surface or local projection zone enough to make the projected content readable. Do not turn the whole scene into a dark immersive render or theatrical stage visualization.
