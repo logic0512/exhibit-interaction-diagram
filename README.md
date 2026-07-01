@@ -66,7 +66,7 @@
 - 儿童脚下触发点、投影源、台阶内容和城市时间线反馈关系清楚。
 - 投影内容不是空白光效，而是城市发展阶段、年代和代表场景。
 
-### 新增校准案例
+### 更多校准案例
 
 这些案例用于展示不同玩法和不同反馈介质，尤其是识别复原、投影目标介质和装置内嵌反馈的处理方式。
 
@@ -183,7 +183,7 @@ scripts/check-test-prompts.py    # 测试样例结构检查
 python3 scripts/check-test-prompts.py
 ```
 
-发布前建议至少 dry-run 或真实生图这 3 个核心案例：
+建议至少 dry-run 或真实生图这 3 个核心案例：
 
 - `T01_tree_spotlight_lightweight_regression`
 - `T02_yangtze_fishing_ban_table`
@@ -211,9 +211,9 @@ python3 scripts/check-test-prompts.py
 
 ---
 
-## 当前状态
+## 包含内容
 
-这是 `v0.1-alpha` 封装版，已经具备：
+这个 skill 包含：
 
 - 出图工作流
 - 人物锁定
@@ -222,9 +222,7 @@ python3 scripts/check-test-prompts.py
 - atomic assets
 - finished examples
 - showcase 案例图
-- 15 个回归测试样例
-
-正式公开推广前，建议继续补：真实安装输出截图、GitHub release notes、skills.sh 页面渲染检查和 marketplace 发布检查。
+- 17 个回归测试样例
 
 ## License
 
