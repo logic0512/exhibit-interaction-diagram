@@ -11,6 +11,8 @@
 - 装置形态与空间秩序：普通互动优先轻便独立、家具化或局部安装，避免无必要的大型全高结构。
 - 设备工作距离：灯光、投影、扫描、感应、声音等载体和反馈面之间要有合理距离。
 - 人体可达范围：参与者站位、手臂、眼高、儿童身高和操作点之间要成立。
+- 空间置入程度：如果用户强调“在空间里、场景里、沉浸式空间、墙面留白、不要用墙面”，图面必须表现装置和房间、地面、站位、通行、观看距离的关系，不能只是把单个产品设备放进一个空房间。
+- 空间维度真实性：如果用户给出明确空间尺寸或说“沉浸式空间”，不能把方案退化成单面墙立面图。除非用户明确要求只做一面展墙，否则画面要表现至少两面墙、转角、地面深度、入口/通行和人在空间中的位置关系。
 
 ## 生图前最小空间信息
 
@@ -150,6 +152,7 @@
 ## 载体选择规则
 
 - 普通互动优先独立轻量或家具化装置：落地台座、斜面屏、桌面设备、墙前轻型支架、短支臂、可移动底座、手摇/旋钮/把手/转轴机构。
+- 当用户要求“空间场景”“置入空间”“墙面留白”或“不要利用墙面”时，优先考虑空间化布置：多个低位小岛、半环形模块、地面路径、站位点、独立灯塔/接收端、可移动道具、中央反馈物或地面范围圈。不要仅用一条长桌、长条控制台或单个封闭设备来承载所有互动。
 - 顶天立地轨道、全高立柱、龙门架、天花吊架和大型桁架只能在明确需要大高度、大面积、承重、安全隔离、群体观看、沉浸空间或大型投影融合时使用。
 - 如果互动只是上下选择、扫描、瞄准、调节或局部移动，优先用手摇、旋钮、齿轮、短滑轨、平衡臂、台座升降、灯头俯仰或可移动底座解决。
 - 空间小且亮：优先屏幕、实体操作、机械、声音；少用投影。
@@ -181,6 +184,10 @@
 
 ## 需要避开的不匹配
 
+- 用户要求空间场景或墙面留白，但画面只是单个定制设备的产品图，或只是把产品图拉远并放进房间。
+- 用户给出空间尺寸或沉浸式空间，但画面只剩一面墙、一条展板或平面立面，缺少房间纵深和多面空间关系。
+- 用户要求不要利用墙面，却用墙面承载主要反馈、说明、屏幕、投影或信息图。
+- 本应由空间、地面站位和多个互动点共同形成的体验，被压缩成一条长条实验台或封闭控制台。
 - 小面积空间里放大型投影或大展台。
 - 明亮开放空间里用低亮度投影作为主反馈。
 - 儿童展项里屏幕、按钮、观察孔都按成人高度设计。
@@ -203,3 +210,7 @@
 ## 提示词短句
 
 Match the installation carrier, device form, and scale to the spatial conditions. Consider room size, ambient brightness, viewing distance, traffic flow, mounting surfaces, ceiling/wall/floor availability, device working distance, spatial order, and child/adult reach. Prefer independent lightweight or furniture-like exhibit devices when they can satisfy the interaction: freestanding pedestal, compact base, angled screen, tabletop device, short arm, movable base, manual crank, knob, handle, or pivot. Do not default to floor-to-ceiling rails, full-height columns, gantries, ceiling suspensions, or truss-like structures for ordinary selection, scanning, aiming, or adjustment. The participant's hand, foot, body, and gaze must stay within a believable interaction envelope. If a device projects, scans, shines, senses, or directs sound toward a target surface, show a plausible gap, path, and target; do not place a projection/spotlight/scanning device flush against the target unless it is explicitly a built-in wall light or embedded sensor. In bright or small spaces, avoid defaulting to projection or oversized tables; prefer screens, physical controls, lighting, sound, or compact mechanical feedback when more suitable. If projection is used, show that the space supports projection through controlled light, visible source, throw path, and target surface.
+
+If the user asks for an exhibit placed in a spatial scene, especially with blank walls or no wall media, do not simply enlarge a product-style device inside an empty room. Show spatial embedding: the room boundary, blank walls, floor area, circulation, participant standing zones, viewing distance, and multiple low interaction points or modules when the gameplay has multiple operations. Keep primary feedback on the installation body, floor path, handheld props, or freestanding modules, not on the walls.
+
+If the user provides room dimensions or asks for an immersive space, do not collapse the design into a single-wall elevation. Show the spatial volume: at least two walls or a corner condition, floor depth, circulation path, participant positions, and how the exhibit wraps or distributes across the room. A wall-panel solution can still be spatial by using multiple wall segments, corner turns, floor paths, and low local feedback points.

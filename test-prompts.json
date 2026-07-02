@@ -513,6 +513,139 @@
         "前方小屏显示城市街区变化，不生成无关大型投影或外接幕布。"
       ],
       "known_failure_to_prevent": "把人机边界规则理解成所有人体承载设备都失败，导致 VR、手持控制器或互动服无法表达；或反过来把设备无结构地贴在人身上。"
+    },
+    {
+      "id": "T18_internet_communication_content_interaction",
+      "title": "Internet communication evolution with content-action meaning",
+      "mode": "idea_expansion_then_image",
+      "user_prompt": "我想在一个空间里做一个关于互联网通信技术演化的交互展项，希望能做成4-5个人可以玩的，通过交互装置来实现互动，并且每个人之间可以联动，空间整体都以承载这个展项为主，大概4X5米的空间，适合做成沉浸式的空间，搭配互动交互装置来做。",
+      "space_assumption": "4m x 5m 中小型沉浸空间，允许局部暗场、墙面/地面信息层和轻量互动站点，但不默认大型展台。",
+      "must_read": [
+        "references/idea-expansion.md",
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/02-sensing-range.png",
+        "assets/visual-system/atomic/results/04-connected-network.png"
+      ],
+      "pass_criteria": [
+        "不能在只有主题、人数和空间诉求时直接生图；必须先补全内容交互机制。",
+        "4-5 个参与者各自承担不同通信阶段、参数或节点，而不是都按同一种按钮。",
+        "画面必须显示同一个内容对象跨阶段变化，例如同一条消息从编码、交换、传输、路由到重组。",
+        "反馈内容能说明互联网通信技术演化的意义，不只是空间里出现网络线、节点或蓝色光效。",
+        "装置形态根据空间和内容选择，可以是墙体/地面融合、轻量站点或特殊设备组合，不默认中央大展台。",
+        "如果基于上一版继续修改，人物 IP、线稿、浅灰空间、色彩限制和图面语言保持一致，不因第二次出图漂移成另一套风格。"
+      ],
+      "known_failure_to_prevent": "直接把模糊主题生图成 4-5 人触发节点的空间效果图；内容虽然出现，但看不出互动动作如何帮助理解互联网通信演化。"
+    },
+    {
+      "id": "T19_visible_light_child_spatial_playability",
+      "title": "Visible-light communication child spatial playability",
+      "mode": "direct_image",
+      "user_prompt": "我想做在一个空间里做一个满足3人以内的交互场景，不要利用空间的墙面，墙面留白。主题是关于可见光通信的，通过不同的操作方式，了解影响可见光通信的因素。场景的交互装置要符合儿童可交互的特点。",
+      "space_assumption": "浅灰白室内展厅，墙面留白，低位儿童互动模块置入空间，最多 3 人参与。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/02-child-low-reach.png",
+        "assets/visual-system/atomic/actions/07-two-person-collaboration.png",
+        "assets/visual-system/atomic/results/02-path-light-up.png"
+      ],
+      "pass_criteria": [
+        "墙面必须留白，不能承载屏幕、投影、文字、信息图或主要反馈。",
+        "画面必须是空间互动场景，显示房间边界、地面范围、站位和通行关系；不能只是单个产品设备或长条实验台放进房间。",
+        "参与者最多 3 人，每个人都要有明确任务、操作件和即时反馈，共同影响同一个接收成功/失败目标。",
+        "发射端、遮挡/干扰测试点、接收端必须沿同一条直线视距光路布置；环境光干扰不能位于主传输链上。",
+        "环境光、信号强度等因素必须是玩家可操作任务或即时反馈，不能变成给设计师看的独立诊断模块。",
+        "转盘、方向盘、滑轨、卡槽等控件必须显示安装点和受控对象，例如连杆连接灯头、滑轨移动接收塔、卡槽控制遮挡。",
+        "儿童操作高度、站位、手部可达范围成立，人物保持统一空白椭圆头线稿 IP。"
+      ],
+      "known_failure_to_prevent": "把可见光通信画成原理拆解或产品设备图；模块位置不符合直线视距光路；多人只是旁观；环境光和信号强度变成上帝视角参数；方向盘悬空且看不出控制灯头。"
+    },
+    {
+      "id": "T20_iot_sensing_scene_integrated",
+      "title": "IoT sensing devices with scene-integrated carriers",
+      "mode": "direct_image",
+      "user_prompt": "在一个长10米，宽5米的沉浸式空间，我想在空间的墙面部署10-20个不同的互动感应设备，通过这些感应设备来了解物联网的不同应用场景，场景的设计有些是交互反馈呈现，有些是跟感应设备结合在一起的。",
+      "space_assumption": "10m x 5m 沉浸式空间，墙面有部分感应设备，同时包含低位场景物件、货架、绿植箱、停车/垃圾桶/门窗/家居等场景结合载体。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/carriers/02-sensing-range.png",
+        "assets/visual-system/atomic/results/04-connected-network.png"
+      ],
+      "pass_criteria": [
+        "不能把 10-20 个设备全部画成墙面传感器目录；墙面设备只能是一部分。",
+        "必须表现 10m x 5m 的空间体量，至少两面墙或转角、地面纵深、通行路径和人物在空间中的位置关系；不能退化成单面墙立面或一条连续展板。",
+        "必须有足够的场景结合载体，例如停车位、垃圾桶、路灯、绿植箱、灌溉阀门、货架、物流箱、门窗、家电、地面感应圈或手持 RFID 道具。",
+        "感应设备要嵌入或贴合对应物件，并在物件本体或附近反馈，例如灯环、状态条、阀门动作、货架灯、停车位灯、垃圾桶满溢灯、门磁灯。",
+        "画面要按应用场景事件或任务链组织，而不是设备名称平铺，例如停车变化、垃圾满溢、作物缺水、货物入库、门窗安全联动。",
+        "人物动作要触发具体物件或感应范围，不只是看墙或点墙面标签。",
+        "地面/局部数据路径可以汇总到低位数据中枢，但不能变成系统架构图或 PPT 信息图。",
+        "墙面文字和设备标签要克制，避免分类展板感。"
+      ],
+      "known_failure_to_prevent": "用户说部分设备和场景结合，但生成结果把所有传感器挂在墙上，像 IoT 分类展板或设备目录。"
+    },
+    {
+      "id": "T21_no_god_view_information_as_installation",
+      "title": "No god-view information placement as interactive installation",
+      "mode": "direct_image",
+      "user_prompt": "做一个儿童可玩的可见光通信互动装置，让孩子通过操作了解环境光、遮挡距离和接收角度如何影响通信成功率。",
+      "space_assumption": "浅灰白中等亮度儿童展区，墙面不作为主要反馈，低位独立模块和地面站位适合 2-3 名儿童协作。",
+      "must_read": [
+        "references/human-component.md",
+        "references/interaction-logic.md",
+        "references/spatial-fit.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/02-child-low-reach.png",
+        "assets/visual-system/atomic/actions/07-two-person-collaboration.png",
+        "assets/visual-system/atomic/results/06-branching-feedback.png"
+      ],
+      "pass_criteria": [
+        "环境光、遮挡距离、接收角度不能被画成孤立参数牌、说明模块、诊断仪表或给设计者看的标签。",
+        "每个信息变量都必须对应儿童可操作任务，例如调节灯头角度、移动接收器、插入遮挡卡、改变光路距离或切换干扰灯。",
+        "信息必须通过操作被获得：操作后出现成功/失败灯、路径强弱、接收状态、前后对比或小屏结果，而不是预先完整贴在装置上。",
+        "去掉人物动作后，画面不能仍然完整解释全部知识点；人物必须是信息显现和状态变化的原因。",
+        "2-3 名儿童各自有清楚角色、低位控件和即时反馈，并共同影响一个通信成功目标。",
+        "发射端、遮挡/干扰点、接收端之间的视距光路成立，控件和受控对象之间有可读连接。",
+        "画面保持展项方案草图，不变成原理讲解图、PPT 信息图或产品设备说明图。"
+      ],
+      "known_failure_to_prevent": "把可见光通信的环境光、信号强度、接收角度等知识直接摆在装置上，人物只是旁观或按按钮，导致信息像给审图者看的说明而不是现场儿童通过操作获得的反馈。"
     }
   ]
 }

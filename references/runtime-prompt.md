@@ -1,157 +1,296 @@
 # Runtime Prompt
 
-这个文件是最终生图提示词母版。使用前先完成 `prompt-brief.md`，再把当前命题真正需要的信息压缩进这里。
+这个文件是最终生图提示词母版。使用前先完成 `prompt-brief.md`，再从本文件选择：
 
-目标：短、准、可执行。不要把 brief、QA 或全部载体规则整段塞进来。
+1. `Base Prompt`：每次必用。
+2. `Conditional Blocks`：只选当前命题相关模块。
+3. `Repair Prompts`：只在出图失败后用于重生成或局部编辑，不进入首次生图 prompt。
+
+原则：最终提示词应该短、准、可执行。不要把 brief、QA、reference 或本文件全文塞进 image model。
+
+## Base Prompt
+
+每次生图只填入当前命题已经成立的信息。
 
 ```text
 Generate one standalone concept image for an exhibition interactive installation.
 Choose the aspect ratio that best explains the gameplay; do not force a horizontal layout.
 
 Goal:
-The image must clearly show how the installation is played. A viewer who did not join the discussion should understand within 3 seconds:
-who interacts, what action triggers the system, where the feedback appears, and what information changes.
+Make the gameplay legible within 3 seconds: who interacts, what action triggers the system, where feedback appears, what information changes, and why the interaction helps explain the theme.
 
 Creative idea:
 {one-sentence gameplay}
 
 Interaction chain:
 - Participant: {adult / child / family / group}
-- Action: {the core physical action}
-- Trigger: {button / prop / gesture / sensing volume / rail movement / light beam / floor step / mechanical control}
-- Feedback area: {screen / projection target / wall / tabletop / floor / object / sound zone / mechanical object}
-- Result: {what the participant sees, hears, or changes}
+- Core action: {physical action}
+- Player task: {aim / match / move / block / connect / sort / repair / collect / route / cooperate / reach success target}
+- Trigger: {control / prop / gesture / sensing volume / rail movement / light beam / floor step / mechanical action}
+- Feedback area: {screen / projection target / tabletop / floor / object / sound zone / mechanical object / space surface}
+- Result: {what changes visually, physically, aurally, or spatially}
+- Content variable changed by the action: {time / position / selected object / layer / connection / parameter / sequence / disassembly / reconstruction / collaboration state}
+- Content-interaction thesis: {what relationship the visitor understands because of this action}
 
-Interactive information content:
+Interactive information:
 - Theme: {knowledge, story, relationship, state, comparison, timeline, ecology, city development, structure, etc.}
-- Feedback content: {specific images, layers, labels, model states, map paths, timeline fragments, data changes, biological distribution, structural parts, etc.}
-- Content change: {before/after or action-driven change}
-- Gameplay evidence: {number of objects, selectable items, positions, layers, states, or timeline nodes needed to make the gameplay readable}
-- Specificity boundary: if the user did not specify real cities, landmarks, brands, named buildings, people, or vehicle brands, use generic silhouettes, numbered objects, abstract labels, and non-branded forms.
-- Color strategy: {main feedback color, secondary accent color, and how cyan/blue is limited to screen/projection/sensing/digital feedback only}
+- Feedback content: {specific simplified images, layers, paths, states, map nodes, timeline fragments, model parts, or result indicators}
+- Information obtained through interaction: {what is revealed, changed, compared, verified, advanced, or summarized only because the visitor acts}
+- Gameplay evidence: {objects, states, layers, positions, or nodes needed to make the gameplay readable}
 
-Spatial and hardware grounding:
-- Space condition: {size, brightness, viewing distance, circulation, child scale, dark/bright assumption}
-- Carrier and device form: {independent lightweight / furniture-like / local installation / large structure only if necessary}
-- Projection type if used: {front projection / short-throw / ultra-short-throw / rear projection / table projection / model mapping / hidden source / projection blending / none}
-- Projection target fit if used: {why the target medium is best: object surface / tabletop / model / device body / floor path / scrim / translucent screen / rear projection / wall or freestanding screen only when justified}
-- Projection optical axis if used: source position {where}; single emitting aperture {front lens/top mirror slot/angled outlet/hidden opening}; lens direction {where it points}; target medium {wall/screen/tabletop/model/scrim/object/rear projection}; target position {in front of the lens}; throw distance {approximate}
-- Working distance: {reasonable distance or path between device, sensing area, projection/light/sound source, and target; show source-to-target direction along the lens axis}
-- Human reach: {where the person stands and how hand/foot/gaze naturally reaches the control}
-- Human-device boundary: {where each handle, crank, lever, slider, button, prop, or device part is mounted; how the hand only grips/touches it without the hardware fusing with the body}
-- Hardware cues: {frames, thickness, seams, support, sensing volume, projection cone, lighting beam, sound direction, maintenance door, hidden controller if needed}
-
-Visual lock references:
-- Required human atomic reference: {asset path from assets/visual-system/atomic/human/}
-- Optional references: {0-2 directly relevant atomic assets or one finished example; otherwise none}
-
-Required human component:
-All people must follow the selected human atomic reference as the strict style anchor:
-simplified gray-black hand-drawn figures, blank oval heads, no hair, no facial features, simple long-sleeve top, simple pants, simple shoes, light pencil shading.
-People may only vary in height, pose, orientation, and quantity.
-One main participant must perform the core interaction. Hands, feet, gaze, and body direction must connect visibly to the trigger and feedback.
-If the exhibit is for children or families, show child height, eye level, reach range, and adult-child scale clearly.
-
-Carrier-specific rules:
-{insert only 2-5 rules relevant to this concept}
-
-Examples:
-- Projection: show source, path, and target; do not place projector/spotlight flush against the target unless it is explicitly embedded.
-- Projection aperture rule: each projection source has one active emitting aperture only. The beam must start from that visible lens, top mirror slot, angled outlet, hidden opening, or rear-projection source. Do not make a front lens glow while the beam starts from a top slot or another surface.
-- Projection feasibility: the light path starts at the projection source, not at the user's hand, button, or annotation arrow. A normal front projector needs visible throw distance; a near-wall source must read as short-throw, rear projection, or embedded projection with correct angle and support.
-- Projection optical-axis rule: first decide where the lens points, then place the target surface in front of that lens. Do not default to a right-side wall or distant wall just to show projection content. The lens direction, beam centerline, target surface, and projected image must align.
-- Projection diversity rule: projection is not automatically an external wall or freestanding screen. Prefer projecting onto the object, model, tabletop, floor path, device surface, translucent layer, or rear-projection surface when that better expresses the gameplay. Use an external screen only when the content needs a separate readable display.
-- Built-in screen: keep the information on the small built-in screen; do not replace it with a detached large screen or floating UI card.
-- Sliding screen: show track length, handle position, screen movement direction, and changing content behind or on the screen.
-- Hand recognition: show an open sensing bay, recess, frame, or transparent detection volume; the hand enters it naturally.
-- Lighting/spotlight: show the lamp body, beam, illuminated zone, and content revealed by the beam; use reachable controls for manual movement.
-- Sound: show source, listening position, and sound direction.
-- Mechanical operation: show handle, crank, wheel, slider, pivot, or prop plus visible mounting base, shaft, bracket, track, or panel, and the movement result.
-
-Composition:
-{one main diagram archetype and the specific spatial arrangement}
+Spatial and device grounding:
+- Space condition: {size, brightness, circulation, viewing distance, child scale, dark/bright assumption}
+- Device form: {independent lightweight / furniture-like / wall-integrated / floor-integrated / showcase-integrated / custom shaped device / handheld / wearable when explicit / large structure only if necessary}
+- Working distance and reach: {how the device, target, sensing area, control, and visitor body relate physically}
+- Required visual reference: {selected human atomic asset path}
+- Optional references: {0-2 directly relevant assets or one finished example; otherwise none}
 
 Visual DNA:
 Clean professional exhibit concept sketch on white or light gray background.
-Gray-black hand-drawn line art with slight sketch wobble and clear device scale.
-Sparse yellow/orange handwritten Chinese annotations for hotspots and arrows.
-Cyan/blue only for local screen glow, projection, sensing, or digital feedback; do not make the whole image blue-dominant.
-Use theme-appropriate restrained secondary colors when helpful, such as soft green for ecology, amber for history or memory, warm gray for mechanical layers, red-orange for warning or selection, black-white photo tone for archives, or pale violet for special zones.
-Keep lots of empty space. Make the image a concept sketch, not a polished 3D render.
+Gray-black hand-drawn line art, slight sketch wobble, clear scale, sparse yellow/orange handwritten Chinese annotations.
+Use restrained color: cyan/blue only for local screen glow, projection, sensing, or digital feedback; choose one theme-appropriate secondary accent when useful.
+Keep the image visually restrained, not crowded with explanations. It should feel like an exhibit design sketch, not a poster, UI mockup, PPT infographic, wiring diagram, children's illustration, or polished product render.
 
 Chinese handwritten labels:
-{4-6 short labels, such as 互动把手 / 感应区域 / 投影内容 / 信息层显现 / 滑动屏 / 儿童视角}
+{0-6 short labels, only where they clarify action or feedback}
 
-Hard constraints:
+Always enforce:
 - One image explains one core gameplay idea.
+- People follow the selected human atomic reference: blank oval heads, no hair, no facial features, simple clothing, gray-black sketch style.
 - The main participant must perform the core action.
 - Feedback must contain theme-specific information, not generic UI, empty projection, or meaningless glow.
-- If the gameplay depends on selection, comparison, scanning, recognition, reconstruction, layered reveal, disassembly, or timeline progress, show enough visual evidence: 2-4 objects, states, layers, positions, or nodes. Do not use a single static object unless it visibly changes.
+- Information printed or displayed on the installation is not interaction by itself. Visitor action must reveal, change, compare, verify, advance, or summarize the information.
 - Use only devices needed for this interaction; do not create a hardware inventory.
-- Do not invent real landmarks, brands, logos, named buildings, specific locations, people, or vehicle brands unless the user specified them.
-- Match carrier scale to the space; avoid large projection, oversized tables, or immersive setups in small or bright spaces unless justified.
-- Prefer independent lightweight, furniture-like, or local installation forms. Avoid floor-to-ceiling rails, gantries, full-height columns, ceiling-to-floor frames, trusses, or architectural-scale structures unless functionally necessary.
-- Device working distance must be believable. Projection, spotlight, scanning, sensing, and directional sound need a visible gap, path, or detection volume.
-- Projection distance and direction must be believable. Show the source, beam direction, target surface, and landing content. Keep interaction-control arrows visually separate from projection beams.
-- Projection source must have one unambiguous emitting aperture. If the beam exits a top mirror slot, do not also show an active front lens; if the front lens is active, the beam must begin at the front lens.
-- Projection target placement must follow the lens optical axis. The projected image cannot appear on a side wall, right wall, or rear wall unless the projector lens clearly points at that surface and the surface faces the beam.
-- If a physically aligned projection target cannot be shown clearly, switch the feedback carrier to a built-in screen, transparent display, lightbox, model surface, or physical reveal instead of forcing wall projection.
-- Avoid projection composition sameness. Do not make every projection concept into a left-side device plus a right-side freestanding screen. Choose the target medium and composition from the idea: object-mapped, tabletop/model-mapped, floor/path, translucent/rear projection, wall/screen, or embedded display.
-- If the interaction object itself can carry the projected feedback, keep the feedback on that object or its immediate surface instead of adding a separate screen.
-- Human reach must be believable. Do not stretch arms, place controls outside natural reach, or let children use adult-height controls without a reachable interface.
-- Keep fixed exhibition hardware physically separate from the body. Fixed handles, cranks, wheels, levers, sliders, buttons, brackets, cables, projectors, screens, sensors, and device shells must not grow out of or fuse with any person's hand, arm, torso, clothing, or child body.
-- A hand may grip a control, but any fixed control must visibly belong to the installation or a handheld prop: show the pivot plate, mounting base, shaft, track, bracket, tabletop, pedestal face, wall mount, floor base, or prop body. Wearable or handheld devices are allowed only if the concept explicitly calls for them, and must show a head strap, wrist strap, shoulder strap, belt, sleeve, clasp, controller shell, or garment-integrated module.
-- Avoid blue overuse. Do not turn every screen, projection, label, glow, information layer, and feedback object into the same cyan/blue.
-- Do not copy reference assets or examples literally. Use them only to stabilize character style, carrier readability, and diagram language.
-- Do not make a poster, advertisement, PPT infographic, UI mockup, wiring diagram, children's illustration, game concept art, or polished product render.
+- Keep carrier scale, working distance, human reach, and human-device boundary believable.
 ```
 
-## 局部编辑提示
+## Conditional Blocks
 
-人物没有参与核心动作：
+只把相关模块追加到 Base Prompt。通常每次追加 1-4 个模块即可；不要全量复制。
+
+### Children Or Family
+
+```text
+Child/family rules:
+- Show child height, eye level, reach range, and adult-child scale clearly.
+- Controls must be low, large, graspable, and readable from a child's point of view.
+- Children should perform the main task when the exhibit is designed for children; adults may guide but should not take over.
+```
+
+### Multi-Person Collaboration
+
+```text
+Multi-person rules:
+- Each participant needs a meaningful role, reachable control, immediate feedback, and contribution to one shared visible result.
+- Avoid one active person with others watching.
+- If there are 4-5 people, divide roles by stage, node, parameter, object, or task instead of repeating the same button.
+```
+
+### Process Or Evolution Content
+
+```text
+Process-content rules:
+- For evolution, development, communication, flow, transformation, or system-collaboration topics, show one content object transforming across stages.
+- Use the same message, route, artifact, dataset, model, or signal from input to change to result.
+- Do not replace the process with unrelated hotspots.
+```
+
+### Selection, Comparison, Scanning, Timeline, Reconstruction
+
+```text
+Gameplay-evidence rules:
+- If the gameplay depends on selection, comparison, scanning, recognition, reconstruction, layered reveal, disassembly, or timeline progress, show enough visual evidence: 2-4 objects, states, layers, positions, or nodes.
+- A single object is allowed only if it visibly opens, rotates, splits, changes state, or reveals hidden content.
+```
+
+### Spatial Scene Or Immersive Room
+
+```text
+Spatial-scene rules:
+- If the user asks for a spatial scene, immersive room, blank walls, or no wall media, show true spatial embedding: room boundary, floor area, standing zones, circulation, viewing distance, and how the exhibit occupies the space.
+- If room dimensions are provided or the space is immersive, do not collapse the image into a single-wall elevation. Show at least two wall planes or a corner/wraparound layout, floor depth, and participant positions.
+- If walls must remain blank, keep main feedback on the installation body, floor path, low freestanding modules, handheld props, or central object.
+```
+
+### Lightweight Or Non-Table Installation
+
+```text
+Installation-form rules:
+- Do not default every installation into a central exhibit table.
+- Choose the form from the content and action: wall-integrated, floor-integrated, showcase-integrated, spatial-surface based, custom shaped device, handheld, or wearable when explicit.
+- Prefer independent lightweight, furniture-like, wall/floor/showcase-integrated, or local installation forms.
+- Avoid floor-to-ceiling rails, gantries, full-height columns, ceiling-to-floor frames, trusses, or architectural-scale structures unless functionally necessary.
+```
+
+### Projection
+
+```text
+Projection rules:
+- Show projection source, one active emitting aperture, beam direction, target surface, and landing content.
+- The beam starts from the visible lens, top mirror slot, angled outlet, hidden opening, or rear-projection source; do not make multiple apertures glow on one source.
+- Place the target surface in front of the lens along the optical axis. Do not put projection content on a side wall or right wall unless the lens clearly points there and the surface faces the beam.
+- Separate interaction arrows from projection beams.
+- Prefer the target medium that best expresses the idea: object, model, tabletop, floor path, device surface, translucent layer, rear projection, wall, or screen.
+```
+
+### Built-In Or Small Screen
+
+```text
+Built-in screen rules:
+- Keep feedback on the specified built-in, small, handheld, or device screen.
+- Do not replace it with a detached large screen, floating UI card, or bottom explanation bar.
+- Screen content should be a simplified result, state, map node, layer, comparison, or next-step cue, not a full app interface.
+```
+
+### Sensor Or Gesture Recognition
+
+```text
+Sensing rules:
+- Show the sensor position and detection zone.
+- If the user puts a hand into a recognition device, show an open sensing bay, recess, frame, or transparent detection volume; the hand enters it naturally.
+- The detection zone must cover the body, hand, prop, or object being sensed.
+```
+
+### IoT Or Many Sensing Devices
+
+```text
+IoT/many-device rules:
+- Do not place every sensor as a labeled wall box or device catalog.
+- Combine wall-mounted sensing points with scene-integrated sensors embedded in props, shelves, plants, bins, lights, doors, appliances, floor pads, or handheld tags.
+- Organize devices around application scenarios or event chains, not application names alone.
+- Show local feedback on or near the sensed object: light ring, status strip, valve movement, shelf light, bin indicator, floor point, local display, or object state change.
+```
+
+### Mechanical Controls Or Physical Props
+
+```text
+Mechanical/control rules:
+- Show the control's mounting point: pivot plate, base, shaft, track, bracket, tabletop, pedestal face, wall mount, floor base, or prop body.
+- The participant may grip or touch the control, but fixed hardware must not grow out of the hand, arm, torso, clothing, or child body.
+- A wheel, knob, crank, slider, handle, or prop must visibly control something through an axis, bracket, pointer, linked lamp head, moving receiver, track direction, target ring, or immediate feedback.
+```
+
+### Wearable Or Handheld Device
+
+```text
+Wearable/handheld rules:
+- Wearable or handheld devices are allowed only when the concept explicitly calls for them.
+- Show readable straps, handles, controller shells, head straps, wrist straps, shoulder straps, belt, sleeve, clasp, or garment-integrated modules.
+- Do not paste unexplained hardware blocks onto the body.
+```
+
+### No Real-World Specificity
+
+```text
+Specificity rules:
+- Do not invent real landmarks, brands, logos, named buildings, specific locations, people, or vehicle brands unless the user specified them.
+- Use generic silhouettes, numbered objects, abstract labels, and non-branded forms.
+```
+
+### Iterative Revision
+
+```text
+Iteration-lock rules:
+- Keep the accepted human IP, sketch linework, material feel, spatial brightness, main composition mode, device scale, and color strategy unless the user explicitly asked to change them.
+- Only fix the stated failure.
+```
+
+## Repair Prompts
+
+以下只在失败后使用，不进入首次生图 prompt。
+
+### 人物没有参与核心动作
 
 ```text
 Edit or regenerate the image so the main human participant clearly performs the core interaction action. Connect the participant's hands, feet, gaze, and body orientation to the trigger point and feedback area. Keep the installation concept, sketch style, composition, and sparse labels.
 ```
 
-玩法看不清：
+### 玩法看不清
 
 ```text
 Regenerate the image with the same installation idea, but make the gameplay legible in 3 seconds. Simplify unnecessary components, clarify the participant action, show the trigger point or sensing area, and make the feedback area visibly connected to the action.
 ```
 
-玩法证据不足：
+### 玩法证据不足
 
 ```text
 Regenerate the image with the same installation idea, but add enough visual evidence for the gameplay. If the interaction depends on selection, recognition, reconstruction, comparison, layered reveal, disassembly, or timeline progress, show 2-4 objects, states, layers, positions, or nodes. Do not rely on one static object and long labels.
 ```
 
-投影不可实现：
+### 内容交互意义弱
+
+```text
+Regenerate the image with the same installation idea and visual style, but make the content-interaction relationship explicit. Show what content variable the participant changes: time, position, object, layer, connection, parameter, sequence, disassembly, reconstruction, or collaboration state. The feedback must show how the theme-specific content changes because of the action, not just that a screen, projection, light, or wall turns on. For process or evolution topics, keep one content object transforming across stages.
+```
+
+### 信息摆放冒充交互
+
+```text
+Regenerate with the same topic and visual style, but remove designer-facing information boards, static parameter plaques, diagnostic gauges, or principle labels that are merely placed on the device. Turn the information into visitor-obtained feedback: the participant must perform a clear action that reveals, changes, compares, verifies, advances, or summarizes the theme-specific information. If the information would still be complete after removing the participant, redesign it as a playable task with reachable controls, immediate feedback, and a visible success/failure or before/after result.
+```
+
+### 投影不可实现
 
 ```text
 Regenerate the image so the projection is physically plausible. First lock one active emitting aperture for each source: front lens, top mirror slot, angled outlet, hidden opening, or rear-projection source. The beam must begin at that aperture, not another glowing part of the same device. Then lock the lens optical axis: source position, lens direction, target medium, target position, and throw distance. Place the projection target directly in front of the lens along the beam centerline; do not default to a right-side wall. Show source, beam direction, target surface, and landing content aligned. Separate interaction arrows from the projection beam.
 ```
 
-投影构图同质化：
+### 投影构图同质化
 
 ```text
 Regenerate the image with a projection target medium that fits the concept instead of defaulting to a separate right-side screen. Consider object mapping, tabletop/model mapping, floor/path projection, translucent/rear projection, or feedback embedded into the device body. Keep the optical axis physically plausible, but vary the target surface and spatial composition.
 ```
 
-蓝色过量：
+### 蓝色过量
 
 ```text
 Regenerate the image with restrained color. Keep cyan/blue only for local screen, projection, sensing, or digital feedback. Use theme-appropriate secondary colors for content layers, such as soft green, amber, warm gray, red-orange, black-white photo tone, or pale violet. Do not make the whole image blue-dominant.
 ```
 
-人机边界错误：
+### 人机边界错误
 
 ```text
 Regenerate the image so fixed exhibition hardware is physically separate from the human body and visibly mounted to the installation. A participant may hold the knob or touch the control, but the control's pivot, base, shaft, track, bracket, tabletop, pedestal face, wall mount, floor base, or handheld prop body must be readable. Do not let fixed handles, cranks, levers, sliders, buttons, brackets, projectors, screens, sensors, cables, or device shells grow out of the hand, arm, torso, clothing, or child body. If the concept explicitly uses wearable or handheld devices, show readable straps, handles, controller shells, garment modules, or attachment structures instead of treating the body as an unexplained mounting surface.
 ```
 
-组件太多：
+### 组件太多
 
 ```text
 Regenerate the image and remove irrelevant carrier components. Keep only the devices needed to explain this specific interaction. The image should feel like a clear exhibit interaction sketch, not a hardware inventory.
+```
+
+### 装置被固定成展台
+
+```text
+Regenerate the image with the same interaction logic, but choose the installation form from the content and spatial relationship instead of defaulting to a central exhibit table. Consider a wall-integrated element, floor path, showcase-integrated device, spatial corner, custom shaped object, handheld prop, or wearable device if it better explains the gameplay. Keep the form lightweight and readable.
+```
+
+### 空间置入不足
+
+```text
+Regenerate with the same interaction logic, but make it a real spatial exhibit scene rather than a product-style device placed in an empty room. Show blank walls if required, room corners or boundaries, floor circulation, participant standing zones, viewing distance, and multiple low freestanding interaction modules if the gameplay has multiple operations. Keep the walls unused when the user asked for blank walls; all feedback should stay on the installation body, floor path, central object, or low modules.
+```
+
+### 空间被压成单面墙
+
+```text
+Regenerate with the same wall-panel or device strategy, but show the full room volume. Do not present a single-wall elevation. Use a corner or wraparound perspective with at least two wall planes, floor depth, circulation path, participant positions, and exhibit elements distributed across multiple wall segments or spatial zones.
+```
+
+### 多人可玩性不足
+
+```text
+Regenerate with the same content principle, but turn the setup into a playable multi-person interaction. Each participant needs a clear role, reachable control, and immediate feedback that affects one shared goal. Replace designer-facing diagnostic modules with visitor-facing tasks: aim the light, move the receiver, insert/remove obstacle cards, reduce interference, route the signal, or make the signal packet reach the target. Show success/failure as a result of the players' actions.
+```
+
+### 控件意图不清
+
+```text
+Regenerate so every control clearly shows what it controls. A wheel, knob, crank, slider, or handle must be mounted and mechanically or visually linked to the changed element: lamp direction, receiver distance, obstacle position, signal strength, or selected state. Do not show a floating wheel, disconnected turntable, or abstract parameter knob.
+```
+
+### 同项目迭代风格漂移
+
+```text
+Regenerate with the same accepted visual system as the previous version: unified blank-oval-head human figures, gray-black hand-drawn sketch linework, light concept-sketch background, restrained cyan only for local digital feedback, and the same general material feel and spatial brightness. Only fix the stated issue; do not change the illustration style, character system, composition language, or color strategy unless explicitly requested.
 ```
