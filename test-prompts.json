@@ -607,6 +607,7 @@
         "不能把 10-20 个设备全部画成墙面传感器目录；墙面设备只能是一部分。",
         "必须表现 10m x 5m 的空间体量，至少两面墙或转角、地面纵深、通行路径和人物在空间中的位置关系；不能退化成单面墙立面或一条连续展板。",
         "必须有足够的场景结合载体，例如停车位、垃圾桶、路灯、绿植箱、灌溉阀门、货架、物流箱、门窗、家电、地面感应圈或手持 RFID 道具。",
+        "如果成本限制要求用凸出图形展板表达场景，必须使用场景式异形轮廓、浅浮雕、连续图形场景带或剪影式展板，不能只是方形平面展墙模块。",
         "感应设备要嵌入或贴合对应物件，并在物件本体或附近反馈，例如灯环、状态条、阀门动作、货架灯、停车位灯、垃圾桶满溢灯、门磁灯。",
         "画面要按应用场景事件或任务链组织，而不是设备名称平铺，例如停车变化、垃圾满溢、作物缺水、货物入库、门窗安全联动。",
         "人物动作要触发具体物件或感应范围，不只是看墙或点墙面标签。",
@@ -646,6 +647,117 @@
         "画面保持展项方案草图，不变成原理讲解图、PPT 信息图或产品设备说明图。"
       ],
       "known_failure_to_prevent": "把可见光通信的环境光、信号强度、接收角度等知识直接摆在装置上，人物只是旁观或按按钮，导致信息像给审图者看的说明而不是现场儿童通过操作获得的反馈。"
+    },
+    {
+      "id": "T22_main_screen_viewing_angle",
+      "title": "Main feedback screen viewing angle on table installation",
+      "mode": "direct_image",
+      "user_prompt": "我想表达一座城市如何在更新中保留记忆，同时让年轻人参与进来。可以做成墙面记忆卡片加互动桌，参与者选择老街记忆，再在桌面搭配新的社区功能，最后生成更新前后的对比结果。",
+      "space_assumption": "中等亮度室内展厅，墙面用于可取放记忆卡片，桌面用于组合操作，2-3 人参与。",
+      "must_read": [
+        "references/human-component.md",
+        "references/spatial-fit.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/03-touch-wall.png",
+        "assets/visual-system/atomic/actions/01-place-to-trigger.png",
+        "assets/visual-system/atomic/carriers/04-operation-surface.png"
+      ],
+      "pass_criteria": [
+        "墙面记忆卡片、桌面组合动作和更新结果之间有清楚因果关系，不是信息卡陈列。",
+        "主反馈屏显示更新前后对比、社区功能组合结果或记忆保留状态，内容跟桌面操作同步变化。",
+        "主反馈屏必须位于参与者自然可观看的位置，例如桌面近端、斜面屏、抬高前倾屏或侧面竖屏；不能放在展台底部正面、踢脚线高度或膝盖以下。",
+        "如果展台底部有低位屏，它只能是状态灯、进度条或缩略提示，不能承载主要结果、照片对比、地图或文字反馈。",
+        "人物保持统一空白椭圆头线稿 IP，不能因多人和墙面卡片场景出现头发、五官或不同角色风格。"
+      ],
+      "known_failure_to_prevent": "把主要结果屏塞到展台底部正面，导致观看视角不成立；复杂多人场景里人物风格漂移。"
+    },
+    {
+      "id": "T23_unclear_topic_requires_user_confirmation",
+      "title": "Unclear topic should stop at idea expansion before image",
+      "mode": "idea_expansion_only",
+      "user_prompt": "我想做一个能够介绍不同植物花朵特征和花香的展项。",
+      "space_assumption": "空间、人群、动作、载体和反馈方式均未知，不能直接生图。",
+      "must_read": [
+        "references/idea-expansion.md",
+        "references/interaction-logic.md",
+        "references/information-content.md",
+        "references/prompt-brief.md"
+      ],
+      "required_visual_assets": [],
+      "pass_criteria": [
+        "不能直接调用生图工具；必须先判定这是创意扩展或辅助表达状态。",
+        "必须指出缺失项，例如参与者、人群、具体动作、触发方式、花香释放方式、反馈内容和空间条件。",
+        "必须给出 2-3 个可选互动方向，或给出 1 个补全方案并明确哪些是推断假设。",
+        "必须让用户确认方向后再生图，除非用户明确要求按判断直接测试或先出一版。",
+        "推荐方向应把花朵特征和花香建立为可操作的内容关系，而不是静态知识牌或普通屏幕介绍。"
+      ],
+      "known_failure_to_prevent": "用户只给主题时，skill 自动补齐玩法并直接生图，导致中间创意判断没有用户参与。"
+    },
+    {
+      "id": "T24_scent_feedback_carrier",
+      "title": "Flower features and scent olfactory feedback carrier",
+      "mode": "direct_image",
+      "user_prompt": "做一个能够介绍不同植物花朵特征和花香的展项。观众选择不同花朵样本，放入识别托盘，闻香口释放对应香型，同时屏幕显示花瓣结构、授粉关系和香型特征。",
+      "space_assumption": "中等亮度科普展区，低位或亲子友好操作台，单人或亲子短暂停留。",
+      "must_read": [
+        "references/human-component.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/spatial-fit.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/01-adult-child-scale.png",
+        "assets/visual-system/atomic/actions/01-place-to-trigger.png",
+        "assets/visual-system/atomic/carriers/04-operation-surface.png"
+      ],
+      "pass_criteria": [
+        "必须有清楚的闻香口、气味模块、气味样本或香味胶囊，气味反馈不能只画成装饰烟雾。",
+        "气味反馈要和花朵样本选择、花瓣结构、授粉关系或香型特征建立内容关系。",
+        "气味范围应局部、轻量、朝向人物嗅闻动作；不能画成蓝色投影光束或充满空间的舞美雾。",
+        "主反馈屏要位于参与者自然可观看的位置，不能放在底部踢脚线高度。",
+        "不能出现底部完整步骤条、总结说明框或教学海报，图面应靠装置关系解释玩法。"
+      ],
+      "known_failure_to_prevent": "花香展项被画成底部步骤说明图和总结教学框；气味只是烟雾装饰，缺少闻香口和样本-气味-花朵特征的互动关系。"
+    },
+    {
+      "id": "T25_sleep_bed_prop_body_mapping",
+      "title": "Sleep bed with prop body projection mapping",
+      "mode": "direct_image",
+      "user_prompt": "我希望这个床的展项增加一个躺在床上的道具人，通过 mapping 投影的方式，在道具人上映射信息，看睡眠过程中器官都在做什么。观众在床边切换睡眠阶段。",
+      "space_assumption": "局部暗区的科普展厅，床体装置旁有观众站位，顶部或斜上方短焦投影映射到床上的白色道具人。",
+      "must_read": [
+        "references/human-component.md",
+        "references/hardware-grounding.md",
+        "references/carrier-components.md",
+        "references/information-content.md",
+        "references/composition-patterns.md",
+        "references/prompt-brief.md",
+        "references/runtime-prompt.md",
+        "references/qa-checklist.md"
+      ],
+      "required_visual_assets": [
+        "assets/visual-system/atomic/human/03-touch-wall.png",
+        "assets/visual-system/atomic/carriers/01-projection-source-path-target.png"
+      ],
+      "pass_criteria": [
+        "床上的对象必须是白色或半透明道具人/人体模型，不是真实睡觉观众、病人或医学尸体。",
+        "真实观众必须在床边操作睡眠阶段控制器；道具人只是 projection mapping 目标。",
+        "投影源、唯一出光口、光锥方向和道具人落点必须沿同一光学轴线成立，不能把内容投到旁边墙面或外置屏。",
+        "器官活动信息应主要贴合道具人身体表面，旁边只保留少量短标签，不能变成右侧大列表、总结说明框或医学海报。",
+        "睡眠阶段切换要改变道具人上的器官活动层、区域或状态，例如入睡、浅睡、深睡、REM 对应不同器官高亮。"
+      ],
+      "known_failure_to_prevent": "把躺卧道具人误画成真实参与者或病人；mapping 内容漂到旁边说明列表，床上只剩装饰光；投影光路不对或变成外接大屏。"
     }
   ]
 }

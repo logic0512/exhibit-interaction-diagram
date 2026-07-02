@@ -42,6 +42,9 @@
 - 屏幕不能只是静态说明牌。若屏幕内容去掉人物动作后仍完整成立，应改成操作后的结果、对比、状态变化或下一步提示。
 - 屏幕要和人物视线或操作动作产生关系。
 - 屏幕尺寸和高度要符合参与者视角，儿童展项要考虑儿童眼高和触摸高度。
+- 主反馈屏要放在参与者自然可观看的位置。成人站姿通常应在腰部以上的斜面、立面、墙面或抬高屏上；儿童展项可以降低，但仍要贴近儿童眼高或自然低头角度。
+- 展台正面靠近地面、膝盖以下、踢脚线高度或被桌沿遮挡的位置，不适合承载主要结果、细节图像、长图、地图、对比画面或需要阅读的信息。除非它只是状态灯、进度条、缩略反馈、地面游戏反馈或明确给儿童低位观看。
+- 如果主反馈必须嵌入展台，优先画成朝向参与者的斜面屏、抬高前倾屏、侧面竖屏、桌面近端屏或可抬头观看的小立屏；不要把关键结果塞进展台底部正面。
 - 如果屏幕是异形或定制造型，仍要让人一眼知道“这里是显示反馈面”。
 - 明亮空间优先考虑屏幕、高亮显示面、灯箱或实体反馈，而不是低亮度投影。
 
@@ -157,6 +160,24 @@ LED 点阵屏：
 - 如果一个感应设备和场景结合，反馈优先出现在该物件附近或物件本体上，例如灯环、小状态条、阀门动作、货架灯、垃圾桶状态、地面点位、设备小屏，而不是统一搬到墙面标签上。
 - 感应器不能只是应用说明点。必须看出人、道具、物件或空间状态进入检测范围后，物件本体或附近发生可读反馈。
 
+### 低成本场景式凸出展板
+
+用于预算有限、不能做真实微缩场景或实体布景，但仍希望表达应用场景的墙面展项。
+
+识别锚点：
+
+- 异形图形轮廓、云形/地图形/道路形/建筑剪影形展板，而不是方形信息牌。
+- 浅浮雕层次、激光切割或打印贴面的场景图形，例如城市天际线、温室轮廓、物流货架、家居门窗、停车道路、垃圾桶、路灯、能耗表、环境叶片。
+- 感应点、灯环、小状态条、图标亮灭、短路径线嵌入这些图形场景里。
+- 多个场景可以通过连续路径、网络线或背景轮廓串成一条环绕空间的场景带。
+
+约束：
+
+- 不要把低成本展板画成一排方方正正的平面展墙、分类牌或海报网格。
+- 不要为了“场景化”做成真实微缩城市、真实垃圾桶、真实温室、真实货架等高成本实体场景。
+- 墙面展板要像“图形场景”，不是“信息表格”；少文字，多用轮廓、图标、局部发光和触发反馈表达应用状态。
+- 如果用户给了空间尺寸或沉浸式要求，要让场景式展板环绕至少两面墙或转角，不能只做单墙立面。
+
 ### 手势识别仓 / 放入式识别装置
 
 用于表达“把手放进识别装置中进行手势、位置或移动控制”的互动，例如通过手部移动控制投影模型旋转、拆解、缩放或切换层级。
@@ -192,6 +213,24 @@ LED 点阵屏：
 - 声音要和人物动作或反馈结果有关。
 - 声音内容要能被画面理解，例如口述、环境音、提示音、方向声场或某个内容片段。
 - 音响外形可以根据空间和具体创意变化，但声源位置与声音反馈方向要清楚。
+
+## 气味 / 嗅觉反馈
+
+用于表达花香、材料气味、环境气味、气味辨识、嗅觉记忆或气味与内容关系的互动。
+
+识别锚点：
+
+- 明确的闻香口、气味喷口、香味胶囊、气味样本盒、可替换气味模块或带孔面板。
+- 气味反馈用很轻的暖色波纹、短弧线或淡色气流表示，范围靠近闻香口和人物鼻部方向。
+- 气味模块必须属于装置本体，例如桌面边缘、床头模块、样本托盘、展柜旁小盒或手持气味道具。
+- 需要比较时，用 2-4 个样本或状态表达不同气味，而不是一整排说明牌。
+
+约束：
+
+- 不要把气味画成蓝色投影光束、烟雾舞美或充满整个空间的雾。
+- 不要让气味硬件贴到人物身体上；若是手持闻香器，要画出可握持外壳。
+- 气味必须和主题信息绑定，例如花朵结构、材料来源、环境场景或记忆线索，不能只是“闻一下香味”。
+- 气味反馈通常需要一个辅助视觉反馈，例如局部灯环、样本高亮、短标签或小屏结果；但辅助屏不能变成完整说明图。
 
 ## 地面互动点
 
@@ -251,6 +290,23 @@ LED 点阵屏：
 - 不要让结构复杂到看不懂玩法。
 - 不要把所有机械件都画成同一种盒体、圆盘或控制台。
 
+## 道具人 / 人体模型映射
+
+用于表达人体、服装、姿态、器官、动作过程或身体状态的 projection mapping、灯光映射或局部显现。
+
+识别锚点：
+
+- 道具人必须像展项模型、白色人体模特、半身模型、透明人体模型或可投影的平滑物体，而不是真实参与者。
+- 真实参与者要站在旁边操作控件；道具人是反馈介质，不承担观众动作。
+- 映射内容要贴合道具人的身体表面、姿态和区域，例如头部、大脑、胸腔、腹部、肌肉或关节。
+- 道具人和真实人物要在材质、姿态和角色上区分：道具人可躺卧、静止、白色或半透明；真实人物保持空白椭圆头线稿 IP。
+
+约束：
+
+- 不要把道具人画成真人、病人、睡觉游客、医学尸体或恐怖解剖。
+- 不要让器官内容漂到旁边大列表里成为上帝视角说明；主要信息应优先落在道具人表面，旁边只保留少量短标签。
+- 如果需要阶段切换，控件必须改变道具人上的映射层、颜色、区域或状态，而不是只改变旁边说明牌。
+
 ## 提示词短句
 
-Use recognizable exhibition carrier cues only when they are relevant, not rigid templates. Screens need a readable display surface with theme-specific simplified content, projections need one unambiguous emitting aperture plus a clear source-path-target relationship, lighting needs visible feedback range and meaning, sensors need detection zones, sound needs source, direction, and content type, floor triggers need participant alignment, and operation tables or mechanical objects may have custom forms that match the exhibit idea and spatial constraints. Fixed physical controls must be visibly mounted to the installation: show the panel, pivot, shaft, track, bracket, base, or prop body. The participant may grip the control, but fixed hardware must not visually fuse with the person's hand, arm, torso, clothing, or child body. Wearable or handheld devices are allowed only when the concept calls for them, and must show straps, handles, controller shells, garment modules, or other readable attachment structures. The internal asset set calibrates recognizability, not exact shapes to copy.
+Use recognizable exhibition carrier cues only when they are relevant, not rigid templates. Screens need a readable display surface with theme-specific simplified content, projections need one unambiguous emitting aperture plus a clear source-path-target relationship, lighting needs visible feedback range and meaning, sensors need detection zones, sound needs source, direction, and content type, scent needs a visible scent port or sample module plus local scent waves, floor triggers need participant alignment, and operation tables or mechanical objects may have custom forms that match the exhibit idea and spatial constraints. Fixed physical controls must be visibly mounted to the installation: show the panel, pivot, shaft, track, bracket, base, or prop body. The participant may grip the control, but fixed hardware must not visually fuse with the person's hand, arm, torso, clothing, or child body. Wearable or handheld devices are allowed only when the concept calls for them, and must show straps, handles, controller shells, garment modules, or other readable attachment structures. If a mannequin or prop body is used as a projection target, keep it visibly separate from the human participants and place the mapped information on the prop surface. The internal asset set calibrates recognizability, not exact shapes to copy.

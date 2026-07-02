@@ -27,7 +27,7 @@ Interaction chain:
 - Core action: {physical action}
 - Player task: {aim / match / move / block / connect / sort / repair / collect / route / cooperate / reach success target}
 - Trigger: {control / prop / gesture / sensing volume / rail movement / light beam / floor step / mechanical action}
-- Feedback area: {screen / projection target / tabletop / floor / object / sound zone / mechanical object / space surface}
+- Feedback area: {screen / projection target / tabletop / floor / object / sound zone / scent port / mechanical object / space surface}
 - Result: {what changes visually, physically, aurally, or spatially}
 - Content variable changed by the action: {time / position / selected object / layer / connection / parameter / sequence / disassembly / reconstruction / collaboration state}
 - Content-interaction thesis: {what relationship the visitor understands because of this action}
@@ -61,6 +61,7 @@ Always enforce:
 - Feedback must contain theme-specific information, not generic UI, empty projection, or meaningless glow.
 - Information printed or displayed on the installation is not interaction by itself. Visitor action must reveal, change, compare, verify, advance, or summarize the information.
 - Use only devices needed for this interaction; do not create a hardware inventory.
+- Do not add bottom step-by-step strips, summary cards, teaching posters, or designer-facing explanation boxes unless the user explicitly requested an explanatory storyboard.
 - Keep carrier scale, working distance, human reach, and human-device boundary believable.
 ```
 
@@ -133,6 +134,16 @@ Projection rules:
 - Prefer the target medium that best expresses the idea: object, model, tabletop, floor path, device surface, translucent layer, rear projection, wall, or screen.
 ```
 
+### Object Or Prop-Body Mapping
+
+```text
+Object-mapping rules:
+- If the target is a mannequin, prop body, model, specimen, or object, make it visibly a physical exhibit target, not a real participant.
+- Keep the mapped information on the target surface and conform it to the object's shape.
+- Human participants must be separate from the prop target and must operate a clear control, sensor, or stage selector.
+- Avoid turning the mapped content into a side list, floating UI card, medical poster, or external explanation board.
+```
+
 ### Built-In Or Small Screen
 
 ```text
@@ -140,6 +151,7 @@ Built-in screen rules:
 - Keep feedback on the specified built-in, small, handheld, or device screen.
 - Do not replace it with a detached large screen, floating UI card, or bottom explanation bar.
 - Screen content should be a simplified result, state, map node, layer, comparison, or next-step cue, not a full app interface.
+- Place the main feedback screen where the participant can naturally see it. Do not put detailed result content on a knee-high front panel, kickplate, floor-level strip, or hidden low screen unless it is only a status light, thumbnail, floor game feedback, or explicitly child-height feedback. For a table or pedestal, use a raised, tilted, near-edge, side-vertical, or tabletop display surface for the main readable result.
 ```
 
 ### Sensor Or Gesture Recognition
@@ -159,6 +171,26 @@ IoT/many-device rules:
 - Combine wall-mounted sensing points with scene-integrated sensors embedded in props, shelves, plants, bins, lights, doors, appliances, floor pads, or handheld tags.
 - Organize devices around application scenarios or event chains, not application names alone.
 - Show local feedback on or near the sensed object: light ring, status strip, valve movement, shelf light, bin indicator, floor point, local display, or object state change.
+```
+
+### Scent Or Olfactory Feedback
+
+```text
+Scent rules:
+- Show a clear scent port, nozzle, sample pod, scent capsule, or scent module that belongs to the installation.
+- Use subtle warm/pale scent waves near the port and participant's nose direction; do not use blue projection beams, heavy fog, or room-filling smoke.
+- Tie the scent to theme-specific information through selection, comparison, memory, material, flower, food, environment, or state feedback.
+- Add only a small local visual cue, such as a light ring, sample highlight, short label, or compact result screen; do not turn scent into a full explanation panel.
+```
+
+### Scenic Raised Graphic Wall Panels
+
+```text
+Scenic raised-panel rules:
+- When budget requires wall-based raised graphic panels instead of real scenic construction, avoid boxy rectangular boards and flat label walls.
+- Use irregular die-cut silhouettes, layered shallow relief, contour lines, printed/laser-cut scene graphics, raised skyline/greenhouse/road/home/shelf outlines, and continuous scenario bands.
+- The result should feel like a graphic scene landscape attached to the wall, not a grid of posters, a single flat exhibition wall, or a real miniature diorama.
+- Embed sensors and local feedback into the graphic scene shapes: light rings, tiny status strips, icon glow, short network lines, or chip-like displays.
 ```
 
 ### Mechanical Controls Or Physical Props
@@ -293,4 +325,10 @@ Regenerate so every control clearly shows what it controls. A wheel, knob, crank
 
 ```text
 Regenerate with the same accepted visual system as the previous version: unified blank-oval-head human figures, gray-black hand-drawn sketch linework, light concept-sketch background, restrained cyan only for local digital feedback, and the same general material feel and spatial brightness. Only fix the stated issue; do not change the illustration style, character system, composition language, or color strategy unless explicitly requested.
+```
+
+### 说明图污染
+
+```text
+Regenerate with the same installation idea, but remove bottom step-by-step strips, summary boxes, teaching-poster panels, large explanatory legends, and designer-facing process diagrams. Let the installation itself explain the gameplay through the participant action, trigger point, feedback surface, and 0-6 short handwritten labels. Keep only compact labels attached to real devices or feedback areas.
 ```
