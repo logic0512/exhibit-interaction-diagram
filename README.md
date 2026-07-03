@@ -12,9 +12,20 @@
 
 ---
 
-![Exhibit interaction diagram demo](examples/showcase/demo.gif)
+<table>
+  <tr>
+    <td><img src="examples/showcase/cases/01-yangtze-fishing-ban-table.png" alt="长江禁渔互动桌"></td>
+    <td><img src="examples/showcase/cases/02-tree-spotlight-interaction.png" alt="树木生态探照灯"></td>
+    <td><img src="examples/showcase/cases/03-city-memory-group-wall.png" alt="城市记忆多人互动"></td>
+  </tr>
+  <tr>
+    <td><img src="examples/showcase/cases/04-visible-light-children-interaction.png" alt="可见光通信儿童互动"></td>
+    <td><img src="examples/showcase/cases/05-flower-scent-recognition.png" alt="花香与植物识别"></td>
+    <td><img src="examples/showcase/cases/06-ar-nature-habitat-viewer.png" alt="AR 自然场景观察"></td>
+  </tr>
+</table>
 
-<sub>两个真实测试案例：长江禁渔互动桌、旋转步行阶梯城市时间线。</sub>
+<sub>六个真实测试案例：互动桌、探照灯、多人协作、儿童科普、气味识别、AR 自然观察。</sub>
 
 ---
 
@@ -48,33 +59,39 @@
 - 道具触发区、桌面地图、禁渔区、巡护线、湿地修复、江豚栖息和鱼群恢复都有对应关系。
 - 没有额外加入无关大屏、投影或设备清单。
 
-### 示例 2：旋转步行阶梯城市时间线
+### 示例 2：AR 自然场景观察
 
 输入：
 
 ```text
-我想做一个扶梯上的交互展项，能让孩子在旋转式的行走阶梯上走动的过程触发信息，了解一座城市的发展脉络。可以做投影，投在扶梯上。
+在一个展厅仿真自然场景中，做一个跟AR相关的交互装置，可以通过这个交互装置看到对应这个场景中会生存的相关动物。
 ```
 
 输出图：
 
-![旋转步行阶梯城市时间线](examples/showcase/spiral-stair-city-timeline.png)
+![AR 自然场景观察](examples/showcase/cases/06-ar-nature-habitat-viewer.png)
 
 质检结果：
 
-- 明确表达了旋转式行走阶梯，不是电动扶梯。
-- 儿童脚下触发点、投影源、台阶内容和城市时间线反馈关系清楚。
-- 投影内容不是空白光效，而是城市发展阶段、年代和代表场景。
+- 仿真自然场景、AR 观察装置和参与者站位关系清楚。
+- AR 信息叠加在场景对应位置，而不是漂浮成普通说明卡。
+- 动物、栖息环境和观察动作形成了清晰的内容反馈链路。
 
-### 更多校准案例
+### 案例介绍
 
-这些案例用于展示不同玩法和不同反馈介质，尤其是识别复原、投影目标介质和装置内嵌反馈的处理方式。
+这些案例用于展示不同主题、空间条件、交互动作和反馈载体下，skill 如何把原始想法转成一张能看懂玩法的装置交互图。
 
-| 案例 | 适合校准 | 图 |
+| 展项名字 | 展项的原始 prompt | 图 |
 |---|---|---|
-| 标本复原 | 多对象选择、多层状态反馈、儿童低位触达 | ![标本复原](assets/examples/09-specimen-reconstruction.png) |
-| 地球仪球面投影 | 投影反馈贴合装置本体、球面/透明弧目标介质 | ![地球仪球面投影](assets/examples/10-globe-surface-arc-projection.png) |
-| 胶片内嵌背投 | 机械输入、选中胶片帧、内嵌光箱/背投反馈 | ![胶片内嵌背投](assets/examples/11-film-embedded-rear-projection.png) |
+| 长江禁渔互动桌 | 我有一个长5米，宽4米的空间。在空间的中间，我想做一个宽2米，长4米的互动桌。在这个互动桌上，可以进行交互，了解关于长江禁渔的相关保护措施，长江的生态资源面貌。设置不同的道具，跟桌面的屏幕进行结合互动。 | <img src="examples/showcase/cases/01-yangtze-fishing-ban-table.png" alt="长江禁渔互动桌" width="260"> |
+| 树木生态探照灯 | 做一个探照灯效果的多媒体装置，设计一个垂直的树木线稿图案在墙体，通过互动的探照灯上下移动，灯光印在墙体的位置，探照灯上的小屏幕会展示出来这颗树对应的位置的生物生态分布。 | <img src="examples/showcase/cases/02-tree-spotlight-interaction.png" alt="树木生态探照灯" width="260"> |
+| 城市记忆多人互动 | 做一个满足4-5个人一起互动的多媒体装置，放在5米X4米的空间，主题为城市的记忆，可以结合空间的一面墙一起做交互。 | <img src="examples/showcase/cases/03-city-memory-group-wall.png" alt="城市记忆多人互动" width="260"> |
+| 可见光通信儿童互动 | 在一个空间里做一个满足3人以内的交互场景，不要利用空间的墙面，墙面留白。主题是关于可见光通信的，通过不同的操作方式，了解影响可见光通行的因素。场景的交互装置要符合儿童可交互的特点。 | <img src="examples/showcase/cases/04-visible-light-children-interaction.png" alt="可见光通信儿童互动" width="260"> |
+| 花香与植物识别 | 做一个可以闻花香和识别不同植物的花的类型的装置。 | <img src="examples/showcase/cases/05-flower-scent-recognition.png" alt="花香与植物识别" width="260"> |
+| AR 自然场景观察 | 在一个展厅仿真自然场景中，做一个跟AR相关的交互装置，可以通过这个交互装置看到对应这个场景中会生存的相关动物。 | <img src="examples/showcase/cases/06-ar-nature-habitat-viewer.png" alt="AR 自然场景观察" width="260"> |
+| 标本复原互动装置 | 做一个标本复原互动装置，孩子选择不同的岩石或化石标本，触发旁边的透明显示面，看到对应古生物从骨骼、外形到生态环境的复原过程。 | <img src="assets/examples/09-specimen-reconstruction.png" alt="标本复原互动装置" width="260"> |
+| 地球仪球面投影 | 做一个手摇地球仪互动装置，观众转动地球仪选择区域，投影反馈展示该区域的气候、路线和生态信息，但希望装置不要变成旁边放一块屏幕。 | <img src="assets/examples/10-globe-surface-arc-projection.png" alt="地球仪球面投影" width="260"> |
+| 胶片内嵌背投 | 做一个城市记忆胶片互动装置，观众手摇推进胶片，投影或背光反馈放大选中的记忆片段，但不要又变成旁边一块独立幕布。 | <img src="assets/examples/11-film-embedded-rear-projection.png" alt="胶片内嵌背投" width="260"> |
 
 ---
 
