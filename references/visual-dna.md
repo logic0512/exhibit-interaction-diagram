@@ -60,10 +60,6 @@
 - 不要写长句。
 - 不要在左上角写大标题，除非用户要求做方案板。
 
-## 提示词短句
+## Runtime 使用
 
-Use a clean exhibition concept sketch style: white or light gray background, gray-black hand-drawn line art, clear scale, sparse yellow/orange interaction annotations, restrained local cyan/blue only for projection, sensing, screen glow, or digital feedback, and enough empty space. Choose one theme-appropriate secondary accent color when needed; do not make the image blue-dominant. It should feel like a professional exhibit design sketch, not a poster, UI mockup, PPT infographic, children's illustration, or polished 3D render.
-
-Choose the aspect ratio that best explains the gameplay; do not force every image to be horizontal.
-
-For projection-based installations, keep the overall image in a light concept-sketch mode. Darken only the projection target surface or local projection zone enough to make the projected content readable. Do not turn the whole scene into a dark immersive render or theatrical stage visualization.
+本文件只定义视觉判断边界，不提供可复制的最终生图短句。生成时使用 `runtime-prompt.md` 的 `Visual DNA` 段，并只补充当前主题需要的主反馈色和辅助强调色。

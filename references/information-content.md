@@ -283,6 +283,6 @@
 - 不要让内容效果和人物动作断开。
 - 不要在用户未指定具体城市、品牌、建筑或地点时，自行生成真实城市名称、真实地标、品牌标识或可识别专属建筑。
 
-## 提示词短句
+## Runtime 使用
 
-Design the media content on screens, projections, lighting, sound, and physical feedback according to the exhibit theme and interaction result. Do not use generic fixed UI panels. The feedback surface should show theme-specific but simplified content: generated result, hidden layer reveal, relationship path, comparison, narrative fragment, state change, or physical transformation. Keep it readable as a concept sketch, not a full interface or dense explainer.
+本文件只负责反馈内容判断，不提供可复制的最终生图短句。生成时把主题、反馈内容、互动后获得的信息和必要玩法证据填入 `runtime-prompt.md` 的 `Interactive information`。

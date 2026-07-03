@@ -62,7 +62,7 @@
 - 伸手悬停感应
 - 挥手或做手势
 - 踩踏地面点位
-- 转动旋钮、摇杆或机械把手
+- 转动旋钮、推动滑块或操作匹配运动方式的机械控件
 - 拿起、放置或扫描道具
 - 靠近装置触发
 - 站入投影或感应区域
@@ -83,7 +83,7 @@
 - 操作点高度必须符合人物身高。成人、儿童、亲子不能共用同一高位操作点；儿童操作点要落在儿童可触达高度。
 - 眼睛或身体朝向必须指向反馈区域。
 - 脚下点位、触摸点、手势识别区要和人物位置对齐。
-- 如果设备本体需要上下移动、旋转或远距离瞄准，画面必须给人物一个可触达的把手、手轮、滑块、拉绳、低位控制件或扶手，而不是让人物直接够到高处或远处的设备。
+- 如果设备本体需要上下移动、旋转或远距离瞄准，画面必须给人物一个可触达且匹配动作的把手、滑块、拉绳、低位控制件、扶手或旋钮。设备本体可安全触达时，优先让人物直接握住设备本体或邻近支架上的把手；只有高处、远处、太重、危险、易损或会挡光/挡视线时，才改成低位代理控制。手轮只用于旋转、卷动或齿轮传动。
 - 固定展项硬件不能由人物身体承载。把手、手轮、拉杆、滑块、按钮、投影源、屏幕、传感器和支架必须有清楚的装置锚点，例如台座面板、桌面、墙面、地面底座、转轴座、支架或可手持道具本体。
 - 手可以握住把手末端、旋钮、道具或触摸屏，但把手的转轴、支撑杆、按钮底座或道具本体必须能看出属于装置，不能像从手臂、身体、衣服或儿童身上长出来。
 - 如果用户明确要求 VR 眼镜、手持控制器、背包式传感器、可穿戴操作服或其他穿戴/手持设备，人物可以承载设备，但必须画出真实穿戴或握持结构，例如头带、绑带、肩带、腰带、袖套、连接扣、手柄外壳或衣物集成模块。不要把穿戴设备画成无固定方式的硬件块贴在身体上。
@@ -109,12 +109,6 @@
 - 不要让固定展项的把手、拉杆、手轮、按钮、投影源、屏幕、传感器、支架或设备外壳和人物身体融合。
 - 不要把儿童或成人身体当成固定展项硬件的安装面；除非用户明确要求穿戴/手持设备，并且画面能看出穿戴或握持结构。
 
-## 提示词短句
+## Runtime 使用
 
-Use the selected visible human atomic reference as the strict character-style anchor for every person in the image. All human participants must share one consistent visual IP: blank oval heads, no hair, no facial features, simplified long-sleeve top, simple pants, simple shoes, gray-black hand-drawn outline, light pencil shading, no individualized clothing or personality styling. Adult and child variants are the same figure system at different heights, not different character designs. One main participant must perform the core interaction action, with hands, feet, gaze direction, and body orientation clearly connected to the trigger point and feedback area. Keep the participant's reach believable: the hand must be close enough to the handle, button, screen, prop, rail, or control point without stretched arms or impossible body posture. If the device moves beyond direct reach, show a reachable handle, slider, wheel, rope, or low control mechanism.
-
-Keep a clear human-device boundary. For fixed exhibition hardware, the participant may grip or touch a control, but the control must visibly belong to the installation: show its pivot, mounting plate, base, bracket, tabletop, wall mount, floor base, or handheld prop body. Do not let fixed handles, cranks, levers, sliders, buttons, projectors, screens, sensors, brackets, cables, or device shells grow out of the person's hand, arm, torso, clothing, or child body. If the concept explicitly uses wearable or handheld devices such as VR headsets, handheld controllers, backpack sensors, or interactive garments, the person may carry the device, but show a readable head strap, wrist strap, shoulder strap, belt, sleeve, clasp, controller shell, or garment-integrated module.
-
-When the exhibit is designed for children or families, include clear height differences between adults and children. Match the child's eye level, hand reach, and body posture to the installation height and interaction point.
-
-Do not generate hairstyles, realistic faces, detailed clothes, dresses, backpacks, hats, cartoon children, fashion illustration characters, realistic visitors, or different character styles in one image.
+本文件只负责判断人物和动作是否成立，不提供可复制的最终生图短句。生成时从 `runtime-prompt.md` 的 `Base Prompt`、`Children Or Family`、`Mechanical Controls Or Physical Props`、`Wearable Or Handheld Device` 中选择相关规则。

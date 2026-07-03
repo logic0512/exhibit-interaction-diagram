@@ -23,7 +23,7 @@
 - 观看距离：近距离手部操作、中距离观看、远距离群体观看。
 - 人流方式：单人停留、亲子停留、多人围观、通行中触发、排队体验。
 - 安装条件：墙面、天花、地面、桌台、电源、吊点、投影距离、可遮光程度。
-- 装置形态：是否能用落地台座、斜面操作台、桌面设备、可移动底座、短支臂、手摇/旋钮/把手/转轴机构表达，而不是依赖全高轨道或大型结构。
+- 装置形态：是否能用落地台座、斜面操作台、桌面设备、可移动底座、短支臂、滑块、升降握把、拉绳、旋钮、把手或转轴机构表达，而不是依赖全高轨道或大型结构。
 - 设备工作距离：投影机/探照灯/扫描器/音响/感应器到目标面的距离是否成立。
 - 人体可达范围：成人或儿童能否自然摸到、握住、推动、转动、站入或看到交互点。
 
@@ -151,10 +151,10 @@
 
 ## 载体选择规则
 
-- 普通互动优先独立轻量或家具化装置：落地台座、斜面屏、桌面设备、墙前轻型支架、短支臂、可移动底座、手摇/旋钮/把手/转轴机构。
+- 普通互动优先独立轻量或家具化装置：落地台座、斜面屏、桌面设备、墙前轻型支架、短支臂、可移动底座、滑块、升降握把、拉绳、旋钮、把手或转轴机构。
 - 当用户要求“空间场景”“置入空间”“墙面留白”或“不要利用墙面”时，优先考虑空间化布置：多个低位小岛、半环形模块、地面路径、站位点、独立灯塔/接收端、可移动道具、中央反馈物或地面范围圈。不要仅用一条长桌、长条控制台或单个封闭设备来承载所有互动。
 - 顶天立地轨道、全高立柱、龙门架、天花吊架和大型桁架只能在明确需要大高度、大面积、承重、安全隔离、群体观看、沉浸空间或大型投影融合时使用。
-- 如果互动只是上下选择、扫描、瞄准、调节或局部移动，优先用手摇、旋钮、齿轮、短滑轨、平衡臂、台座升降、灯头俯仰或可移动底座解决。
+- 如果互动只是上下选择、扫描、瞄准、调节或局部移动，先根据运动类型选控制件，不要默认手摇杆。上下移动优先用垂直滑块、升降握把、拉绳、配重滑轨、短滑轨或台座升降；角度瞄准优先用俯仰把手、万向节、短支臂或可移动底座；只有旋转、连续推进、卷动或齿轮传动才使用手摇、手轮或曲柄。
 - 空间小且亮：优先屏幕、实体操作、机械、声音；少用投影。
 - 空间小且暗：可以用局部投影、灯光、声音；控制尺度。
 - 空间大且暗：可以用投影、灯光、沉浸、地面路径。
@@ -174,10 +174,10 @@
 - 互动距离要合理：手部触发适合近距离，投影/大屏反馈适合中远距离。
 - 人物站位要和手部操作点保持自然距离。成人舒适前伸操作通常约 0.4-0.7m，儿童更短；如果画面里手臂被拉得很长、身体离设备过远或操作点超出肩高/眼高太多，要改装置尺度或加中间机构。
 - 儿童操作点优先放在儿童胸口到眼高附近，或放在低位桌面/扶手/按钮上；不要让儿童操作成人高度的墙面、轨道或高位屏幕。
-- 可移动轨道、滑杆、探照灯、机械把手等装置必须有可触达的握持点。设备本体可以移动到高处，但人手必须通过可达的把手、绳索、滑块、平衡臂、手轮或低位控制件来操作。
+- 可移动轨道、滑杆、探照灯、机械把手等装置必须有可触达的握持点。设备本体可以移动到高处，但人手必须通过与运动方向匹配的低位控制件操作：上下移动用滑块、拉绳、升降握把或配重机构；角度瞄准用俯仰把手、万向节或短支臂；旋转推进才用手轮、曲柄或齿轮。
 - 设备和反馈面之间要有工作距离。探照灯、投影、扫描灯、定向声源、摄像识别和体感感应不能无理由贴着目标面；如果贴墙安装，必须表现为贴墙灯带、壁洗灯、内嵌屏或近距离传感器，而不是远距投射/扫描设备。
 - 当用户指定“灯照到墙上、投到墙上、扫到物体上”，画面必须显示发光/投射设备、目标面和二者之间的空隙或光路。
-- 多人协作要留出每个人的站位，不能都挤在一个点。
+- 多人协作要留出每个人的站位，不能都挤在一个点。每个人的站位、操作件、对应装置和即时反馈必须绑定在一起，让人一眼知道谁在哪里操作什么、这个动作改变哪个共享结果。
 - 圆桌或互动桌需要留出围合空间；如果空间不够，改成靠墙斜面台或单人操作台。
 - 展示柜旁互动要避免挡住通行和观看展品的视线。
 - 座位观看或环幕体验需要画出座位/站位区和屏幕距离，不要只画大屏。
@@ -196,7 +196,7 @@
 - 投影距离、投影源和落点在画面里不成立。
 - 探照灯、扫描灯或投影设备贴在墙面上，却声称用光束扫描墙面或投到墙面。
 - 普通单人或亲子互动被画成顶天立地轨道、全高立柱、龙门架、大型吊架或桁架，导致装置体量压过展墙和内容。
-- 可以用独立台座、手摇/旋钮/短支臂/桌面装置完成的互动，被放大成建筑级装置。
+- 可以用独立台座、滑块、升降握把、旋钮、短支臂或桌面装置完成的互动，被放大成建筑级装置。
 - 人物的手臂明显够不到把手、屏幕、按钮、轨道、道具或机械操作点。
 - 人物需要站在不可能的位置操作，例如身体被墙/展台挡住、站位离设备过远、操作点超过儿童或成人自然可达高度。
 - 可移动设备没有可触达的操作机构，只画了一个高处移动的灯头或屏幕。
@@ -207,10 +207,6 @@
 - 环幕或影院式内容没有可停留区域。
 - 地图、时间轴或长文本被放在地面投影里，导致无法阅读。
 
-## 提示词短句
+## Runtime 使用
 
-Match the installation carrier, device form, and scale to the spatial conditions. Consider room size, ambient brightness, viewing distance, traffic flow, mounting surfaces, ceiling/wall/floor availability, device working distance, spatial order, and child/adult reach. Prefer independent lightweight or furniture-like exhibit devices when they can satisfy the interaction: freestanding pedestal, compact base, angled screen, tabletop device, short arm, movable base, manual crank, knob, handle, or pivot. Do not default to floor-to-ceiling rails, full-height columns, gantries, ceiling suspensions, or truss-like structures for ordinary selection, scanning, aiming, or adjustment. The participant's hand, foot, body, and gaze must stay within a believable interaction envelope. If a device projects, scans, shines, senses, or directs sound toward a target surface, show a plausible gap, path, and target; do not place a projection/spotlight/scanning device flush against the target unless it is explicitly a built-in wall light or embedded sensor. In bright or small spaces, avoid defaulting to projection or oversized tables; prefer screens, physical controls, lighting, sound, or compact mechanical feedback when more suitable. If projection is used, show that the space supports projection through controlled light, visible source, throw path, and target surface.
-
-If the user asks for an exhibit placed in a spatial scene, especially with blank walls or no wall media, do not simply enlarge a product-style device inside an empty room. Show spatial embedding: the room boundary, blank walls, floor area, circulation, participant standing zones, viewing distance, and multiple low interaction points or modules when the gameplay has multiple operations. Keep primary feedback on the installation body, floor path, handheld props, or freestanding modules, not on the walls.
-
-If the user provides room dimensions or asks for an immersive space, do not collapse the design into a single-wall elevation. Show the spatial volume: at least two walls or a corner condition, floor depth, circulation path, participant positions, and how the exhibit wraps or distributes across the room. A wall-panel solution can still be spatial by using multiple wall segments, corner turns, floor paths, and low local feedback points.
+本文件只负责空间判断，不提供可复制的最终生图短句。生成时把空间结论填入 `runtime-prompt.md` 的 `Space condition` 和 `Working distance and reach`，并按命题选择 `Spatial Scene Or Immersive Room`、`Lightweight Or Non-Table Installation` 或 `Projection` 模块。

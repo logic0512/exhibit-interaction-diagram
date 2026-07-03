@@ -48,14 +48,18 @@
 - 时间推进：要有时间节点、连续位置、胶片/轨道/刻度/路径或前后变化。
 - 协作：要有多个参与者各自可执行的动作或输入点，而不是多人围观同一个按钮。若是 4-5 人协作，每个人最好承担不同阶段、不同参数或不同节点，最后汇总到同一个结果。
 - 过程/演化：要有同一个内容对象在多个阶段中的变化，例如同一条消息、同一条路线、同一件展品、同一组数据或同一个模型。
-- 多人可玩：每个参与者都要有自己的操作件、站位和即时反馈，并共同影响一个可见目标。不要让某个人只是观看参数屏，或把某些模块画成只有“上帝视角”才懂的检测/说明装置。
+- 多人可玩：每个参与者都要有自己的操作件、站位和即时反馈，并共同影响一个可见目标。不要让某个人只是观看参数屏，或把某些模块画成只有“上帝视角”才懂的检测/说明装置。多人场景必须把“人在哪里、手在操作什么、这个装置改变什么、反馈在哪里出现、如何影响共同目标”绑定成可读链路；不要添加没有明确操作者或用途的装置。
+- 变量必须入链：如果某个人负责选择、调节、遮挡、连接、放置、移动、识别、组合或扫描某个变量，这个变量必须真实进入当前物理链路、内容链路或反馈状态。画面要能看出“人操作的东西”如何改变“系统正在响应的东西”，不要把变量做成旁边的象征性选择台、参数牌或说明道具。
+- 直接操作优先：如果受控对象在安全可达范围内，优先让观众操作对象本体或对象附近的握持点，例如推拉、抬升、转动、瞄准、滑动或移动对象本身。远程低位操纵杆、分离式滑块或代理控件只在受控对象不可达、太高、太重、危险、会挡光、需要精密传动或必须保护展品时使用。
+- 握持方式匹配运动：如果受控对象需要稳定上下、平移、俯仰、双向瞄准或保持水平，优先用双侧握持、横杆、U 形托架、两端把手或双手操作。单侧小把手只适合轻小对象、单轴微调或不需要稳定姿态的操作。
+- 控件语义：控制方式必须和动作类型匹配。不要把“控制”直接翻译成手摇杆。上下移动、左右滑动、角度瞄准、连续旋转、推进卷动、插入遮挡、移动接收点分别需要不同控件；控件错误会让玩法含义变错。
 - 交互获得信息：如果去掉人物动作后信息仍然完整成立，说明它只是信息摆放。必须把信息改成由动作触发、改变或验证，例如调节光源后看到接收成功率变化，移动屏幕后看到对应年代建筑，连接节点后看到传播路径完成。
 
 如果一个对象无法单独说明“为什么要互动”，就增加对象数量、状态层级或动作阶段；不要用长文字解释弥补。
 
 如果画面只能看出“触发后亮了”，但看不出观众通过动作理解了什么，说明交互逻辑不成立。先改动作或反馈内容，再生图。
 
-如果画面只能看出“原理被拆解了”，但看不出观众正在完成什么任务，说明它仍然不是互动展项图。先把参数变成可玩的挑战，例如对准光路、移动接收点、插入障碍、调暗干扰、让信号包到达终点、多人同时配合达成接收成功。
+如果画面只能看出“原理被拆解了”，但看不出观众正在完成什么任务，说明它仍然不是互动展项图。先把参数变成可玩的挑战，例如对准、移动、放置、连接、遮挡、比较、收集、传递、组合、修复或多人协作达成一个可见结果。
 
 如果画面只能看出“装置上有主题信息”，但看不出观众如何通过操作获得这些信息，说明装置定义不成立。先删掉静态说明模块，把信息转成现场任务和反馈：选择、连接、推进、遮挡、对准、放置、扫描、拆解或协作汇总。
 
@@ -87,12 +91,6 @@
 - 不要为了完整而塞入所有载体。
 - 不要把选择、识别、复原、比较或时间推进画成单一静态物件。
 
-## 提示词短句
+## Runtime 使用
 
-The image must clearly show the interaction chain: participant action -> trigger point or sensing area -> visible feedback area -> experiential result. Make this chain legible through pose, arrows, dashed zones, beams, waves, gaze direction, and a few short handwritten labels.
-
-If the gameplay depends on selection, comparison, recognition, reconstruction, layered reveal, disassembly, or timeline progress, show enough visual evidence: multiple selectable objects, multiple states, layered stages, or continuous positions. Do not rely on a single static object unless it visibly changes.
-
-The action must carry content meaning, not only activate an effect. Show what content variable the participant changes: time, position, object, layer, connection, parameter, sequence, disassembly, reconstruction, or collaboration state. For evolution or process topics, keep one content object visibly transforming across stages.
-
-Do not treat displayed information as interaction by itself. Information must be obtained through visitor action: revealed, changed, compared, verified, or summarized by the device response. If the same information would remain complete without the participant, redesign it as a playable task and immediate feedback.
+本文件只负责判断玩法链路是否成立，不提供可复制的最终生图短句。生成时把“一句话玩法、内容变量、反馈变化、玩法证据”填入 `runtime-prompt.md`，再按命题选择 `Multi-Person Collaboration`、`Process Or Evolution Content` 或 `Selection, Comparison, Scanning, Timeline, Reconstruction` 等模块。

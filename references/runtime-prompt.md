@@ -6,7 +6,7 @@
 2. `Conditional Blocks`：只选当前命题相关模块。
 3. `Repair Prompts`：只在出图失败后用于重生成或局部编辑，不进入首次生图 prompt。
 
-原则：最终提示词应该短、准、可执行。不要把 brief、QA、reference 或本文件全文塞进 image model。
+原则：最终提示词应该短、准、可执行。不要把 brief、QA、reference 或本文件全文塞进 image model。其他 reference 只用于判断和选择模块，不提供独立注入短句。
 
 ## Base Prompt
 
@@ -85,6 +85,8 @@ Multi-person rules:
 - Each participant needs a meaningful role, reachable control, immediate feedback, and contribution to one shared visible result.
 - Avoid one active person with others watching.
 - If there are 4-5 people, divide roles by stage, node, parameter, object, or task instead of repeating the same button.
+- Bind each participant to one clear interaction station: standing zone -> reachable control/prop -> affected device/object -> local feedback -> shared result. Avoid extra freestanding modules whose user, action, or purpose is ambiguous.
+- A variable station must affect the shared chain, not sit beside it as a symbolic selector. Show how the operated prop, node, control, sample, position, or gesture changes the affected object, path, layer, state, or shared result.
 ```
 
 ### Process Or Evolution Content
@@ -152,6 +154,8 @@ Built-in screen rules:
 - Do not replace it with a detached large screen, floating UI card, or bottom explanation bar.
 - Screen content should be a simplified result, state, map node, layer, comparison, or next-step cue, not a full app interface.
 - Place the main feedback screen where the participant can naturally see it. Do not put detailed result content on a knee-high front panel, kickplate, floor-level strip, or hidden low screen unless it is only a status light, thumbnail, floor game feedback, or explicitly child-height feedback. For a table or pedestal, use a raised, tilted, near-edge, side-vertical, or tabletop display surface for the main readable result.
+- Orient the screen toward the actual participant's standing position, gaze, and control side, not toward the camera or god-view observer. The safest placement is in front of the operator on the same operation face, near the handle/control, tilted toward the operator's eyes.
+- A side-mounted screen that fully faces the image viewer but not the operator is wrong, even if it makes the drawing easier to read. Use head/gaze direction, screen normal, or operation-face continuity to prove the operator can see it.
 ```
 
 ### Sensor Or Gesture Recognition
@@ -161,6 +165,18 @@ Sensing rules:
 - Show the sensor position and detection zone.
 - If the user puts a hand into a recognition device, show an open sensing bay, recess, frame, or transparent detection volume; the hand enters it naturally.
 - The detection zone must cover the body, hand, prop, or object being sensed.
+```
+
+### Visible Light Communication
+
+```text
+Visible-light communication rules:
+- Show a physically consistent line-of-sight chain: LED/light emitter -> free-space light path -> receiver sensor facing the emitter.
+- Let each child operate one real variable: emitter angle, receiver distance, obstacle card, or ambient interference lamp.
+- Each operated variable must visibly affect the current light path, receiver position, or result state; do not turn variables into detached explanation props.
+- The current physical state and the feedback result must agree. If an opaque obstacle card is in the main beam, the receiver should show weak/blocked/fail; if the result is success, the beam must be aligned and unobstructed.
+- Ambient-light interference belongs to a side lamp, light hood, or noise source near the receiver; do not draw it as a physical obstacle placed in the transmission path.
+- Do not show contradictory current-state labels such as blocked and success as the same result. Use a single current result, or clearly separate before/after comparison states.
 ```
 
 ### IoT Or Many Sensing Devices
@@ -199,7 +215,10 @@ Scenic raised-panel rules:
 Mechanical/control rules:
 - Show the control's mounting point: pivot plate, base, shaft, track, bracket, tabletop, pedestal face, wall mount, floor base, or prop body.
 - The participant may grip or touch the control, but fixed hardware must not grow out of the hand, arm, torso, clothing, or child body.
+- Prefer direct manipulation when the controlled object is safely reachable: place the handle, grip edge, push/pull point, tilt handle, or short rail on or near the controlled object itself. Use a separate remote lever/slider only when the object is unreachable, too high, heavy, unsafe, fragile, would block the beam/view, or needs visible transmission.
+- Match the grip layout to the motion and stability. For long, cylindrical, horizontal, or heavier objects that need stable up/down movement, panning, tilting, or level control, prefer two-sided grips, a crossbar, U-shaped yoke, two-end handles, or two-hand operation. Use a single side handle only for small/light objects, one-axis fine adjustment, or when the bracket clearly supports the load.
 - A wheel, knob, crank, slider, handle, or prop must visibly control something through an axis, bracket, pointer, linked lamp head, moving receiver, track direction, target ring, or immediate feedback.
+- Choose the control form from the motion. Linear up/down motion should use a slider, lift handle, rope, short rail, or counterweight; aiming should use a tilt handle, gimbal, short arm, or movable base; cranks/hand wheels are for rotation, winding, continuous advance, or gear transmission only.
 ```
 
 ### Wearable Or Handheld Device
@@ -315,10 +334,46 @@ Regenerate with the same wall-panel or device strategy, but show the full room v
 Regenerate with the same content principle, but turn the setup into a playable multi-person interaction. Each participant needs a clear role, reachable control, and immediate feedback that affects one shared goal. Replace designer-facing diagnostic modules with visitor-facing tasks: aim the light, move the receiver, insert/remove obstacle cards, reduce interference, route the signal, or make the signal packet reach the target. Show success/failure as a result of the players' actions.
 ```
 
+### 多人装置关系歧义
+
+```text
+Regenerate with the same multi-person idea, but remove ambiguous extra modules and bind every participant to a specific station. For each person, make the standing zone, hand action, control or prop, affected device, local feedback, and contribution to the shared result visible in one chain. Do not add a module unless a person clearly operates it or it clearly receives feedback from the shared system.
+```
+
+### 变量没有进入交互链路
+
+```text
+Regenerate with the same installation idea, but make every operated variable visibly affect the system. For each prop, sample, card, node, slider, button, gesture, or position, show what it changes: target object, path, layer, parameter, state, connection, success/failure, or shared result. Remove symbolic selector tables, detached parameter panels, or side props that do not visibly change the current interaction chain.
+```
+
 ### 控件意图不清
 
 ```text
 Regenerate so every control clearly shows what it controls. A wheel, knob, crank, slider, or handle must be mounted and mechanically or visually linked to the changed element: lamp direction, receiver distance, obstacle position, signal strength, or selected state. Do not show a floating wheel, disconnected turntable, or abstract parameter knob.
+```
+
+### 远程控件不必要
+
+```text
+Regenerate with the same interaction idea, but prefer direct manipulation. If the controlled object is safely reachable, move the grip, handle, push/pull point, tilt handle, or short rail onto the controlled object or its adjacent bracket instead of using a separate remote lever/slider. Keep remote controls only when there is a clear reason: height, weight, safety, fragility, beam/view obstruction, or visible transmission.
+```
+
+### 控件类型污染
+
+```text
+Regenerate with the same device and interaction, but replace the mismatched control with a control that matches the motion. Do not use a hand crank, hand wheel, or rocker unless the action is rotation, winding, continuous advance, or gear transmission. For up/down movement use a vertical slider, lift handle, rope, short rail, counterweight, or guided handle; for aiming use a tilt handle, gimbal, short arm, or movable base.
+```
+
+### 屏幕朝向错误
+
+```text
+Regenerate with the same installation and screen content, but rotate or relocate the built-in screen so it faces the actual participant's standing position and gaze. Put the screen in front of the operator on the same operation face, near the handle/control, or on a tilted surface naturally visible from the operator's posture. Do not put the complete screen on a side face just so the image viewer can read it. Keep the device form, interaction action, and visual style.
+```
+
+### 可见光通信科学性错误
+
+```text
+Regenerate with the same visible-light communication idea, but make the physics consistent. Align the emitter and receiver on a clear line-of-sight path. Any operated factor must visibly affect the current path, receiver state, or result. If the current path is blocked or misaligned, show weak/failed reception; if the screen shows success, the path must be aligned and unobstructed. Put ambient-light interference as a side source or local noise near the receiver, not as a physical barrier in the beam. Do not show blocked and success as the same current result.
 ```
 
 ### 同项目迭代风格漂移
