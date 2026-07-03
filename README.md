@@ -1,14 +1,18 @@
 # Exhibit Interaction Diagram Skill
 
 > 把一句展项创意，变成一张别人 3 秒能看懂怎么玩的装置交互图。
+>
+> Turn an exhibition interactive idea into a clear installation gameplay diagram that people can understand in 3 seconds.
 
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-exhibit--interaction--diagram-blueviolet)](SKILL.md)
 [![skills.sh](https://skills.sh/b/logic0512/exhibit-interaction-diagram)](https://skills.sh/logic0512/exhibit-interaction-diagram)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**用于生成、扩展和质检展览多媒体互动装置概念图，重点不是漂亮效果图，而是清楚表达“人怎么参与、触发了什么、反馈在哪里、内容表达什么”。**
+**中文**：用于生成、扩展和质检展览多媒体互动装置概念图，重点不是漂亮效果图，而是清楚表达“人怎么参与、触发了什么、反馈在哪里、内容表达什么”。
 
-[效果示例](#效果示例) · [快速开始](#快速开始) · [触发方式](#触发方式) · [工作链路](#工作链路) · [验证与测试](#验证与测试) · [安全边界](#安全边界)
+**English**: A skill for generating, expanding, and reviewing concept diagrams for exhibition interactives and multimedia installations. It focuses on making the interaction readable: who participates, what they do, what gets triggered, where feedback appears, and what content relationship is explained.
+
+[中文说明](#它解决什么问题) · [English Overview](#english-overview) · [效果示例](#效果示例) · [快速开始](#快速开始) · [工作链路](#工作链路) · [安全边界](#安全边界)
 
 ---
 
@@ -224,6 +228,113 @@ examples/showcase/               # 公开 README 使用的稳定案例图
 - finished examples
 - showcase 案例图
 
-## License
+---
 
-[MIT](LICENSE)
+## English Overview
+
+### What This Skill Does
+
+Exhibition concept images often fail in three ways: they look visually appealing but do not explain the interaction, they become hardware inventories, or they only show UI screens without spatial or physical logic.
+
+This skill converts an exhibition or multimedia installation idea into a single readable concept diagram. It organizes the idea around:
+
+- participant
+- action
+- trigger
+- feedback
+- result
+- spatial fit
+- hardware grounding
+- content meaning
+
+The output is not a construction drawing or wiring diagram. It is a concept communication image for early-stage ideation, proposal discussion, client communication, and interaction design review.
+
+### Typical Use Cases
+
+- Museum and exhibition interactive concepts
+- Multimedia installation ideation
+- Spatial interface and experiential exhibit proposals
+- Children-oriented interactive exhibits
+- Projection, screen, lighting, sound, scent, AR, sensor, or mechanical interaction concepts
+- Reviewing whether an installation image is physically and interactively believable
+
+### Example Prompts
+
+```text
+Use $exhibit-interaction-diagram to turn this exhibition idea into a clear interaction diagram:
+I want to design an interactive table in a 5m x 4m room. Visitors can place physical props on the tabletop screen to learn about Yangtze River fishing-ban policies and ecological restoration.
+```
+
+```text
+Use $exhibit-interaction-diagram to expand this idea first:
+I want an exhibit about city memory, but I only know the room is about 5m x 6m.
+```
+
+```text
+Use $exhibit-interaction-diagram to review this concept image:
+Check whether the projection direction, device distance, participant reach, screen orientation, and interaction logic are believable.
+```
+
+### Workflow
+
+The skill supports four paths:
+
+| Path | When To Use | Output |
+|---|---|---|
+| Direct image generation | The participant, action, trigger, feedback, content, and spatial condition are already clear | One readable installation interaction diagram |
+| Assisted expression | The idea exists, but the interaction chain is incomplete | One clarified interaction proposal before image generation |
+| Idea expansion | Only the theme, audience, content, or space is known | 2-3 interaction directions and a recommended one |
+| Failure review | An existing image looks wrong or unclear | A QA review based on interaction logic, spatial fit, hardware grounding, and visual readability |
+
+Core process:
+
+```text
+User idea
+→ prompt-brief.md structured reasoning
+→ choose required human and carrier references
+→ runtime-prompt.md final image prompt
+→ image generation
+→ qa-checklist.md review and iteration
+```
+
+### What Makes It Different
+
+| Dimension | Generic image prompt | This skill |
+|---|---|---|
+| Goal | Generate a nice concept image | Generate a diagram that explains how the exhibit works |
+| People | Optional and often inconsistent | Required, visually consistent, and performing the core action |
+| Devices | Often vague glowing objects | Grounded in exhibition hardware logic, distance, mounting, reach, and visibility |
+| Space | Often ignored | Evaluates size, brightness, circulation, children/adult scale, and carrier suitability |
+| Feedback content | Empty screens, blue UI, generic glow | Theme-specific information shown through screen, projection, light, sound, scent, mechanical, or spatial feedback |
+| Iteration | Rephrase and regenerate | Uses QA rules to check gameplay, physical logic, scale, and content feedback |
+
+### File Structure
+
+```text
+SKILL.md                         # Main workflow
+README.md                        # GitHub overview and showcase
+LICENSE                          # MIT license
+agents/openai.yaml               # Agent metadata
+references/                      # Reasoning rules, prompt templates, QA, spatial and hardware constraints
+references/prompt-brief.md       # Structured pre-generation brief
+references/runtime-prompt.md     # Final short prompt template
+assets/visual-system/atomic/     # Single-intent references for humans, actions, carriers, and results
+assets/examples/                 # Finished examples for light visual calibration
+examples/showcase/               # Public README showcase images
+```
+
+Local `outputs/` folders are for testing only and are not part of the public release.
+
+### Safety And Scope
+
+- Does not publish, upload, or call external services automatically.
+- Does not store private source paths in prompts.
+- Does not treat local test outputs as active release assets.
+- Does not copy unauthorized source cases into final images.
+- Does not produce construction drawings, electrical diagrams, or manufacturing-ready engineering files.
+- If the requested space, brightness, or hardware condition does not support the selected carrier, the skill asks for clarification or states a conservative assumption first.
+
+## License / 许可证
+
+This project is released under the [MIT License](LICENSE).  
+本项目使用 [MIT License](LICENSE) 发布。
